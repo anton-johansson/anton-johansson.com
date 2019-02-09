@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import renderSocialLinks from './render-social-links';
 
 export default class Header extends Component {
   render() {
@@ -24,15 +25,7 @@ export default class Header extends Component {
               <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>{translate('home.description')}</h3>
               <hr/>
               <ul className="social">
-                {
-                  settings.socialLinks && settings.socialLinks.map(item => {
-                    return (
-                      <li key={item.name}>
-                        <a href={item.url} target="_blank"><i className={item.className}></i></a>
-                      </li>
-                    )
-                  })
-                }
+                {renderSocialLinks(settings)}
               </ul>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import renderSocialLinks from './render-social-links';
 
 export default class Footer extends Component {
   render() {
@@ -8,17 +9,7 @@ export default class Footer extends Component {
         <div className="row">
           <div className="twelve columns">
             <ul className="social-links">
-              {
-                settings.socialLinks && settings.socialLinks.map(item => {
-                  return (
-                    <li>
-                      <a href={item.url}>
-                        <i className={item.className}/>
-                      </a>
-                    </li>
-                  )
-                })
-              }
+              {renderSocialLinks(settings)}
             </ul>
           </div>
           <div id="go-top">
