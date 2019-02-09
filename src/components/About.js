@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 export default class About extends Component {
   render() {
     const {translate} = this.props;
-    let resumeData = this.props.resumeData;
     return (
       <section id="about">
         <div className="row">
