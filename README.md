@@ -1,5 +1,7 @@
 # anton-johansson.com
 
+[![Build Status](https://travis-ci.org/anton-johansson/anton-johansson.com.svg)](https://travis-ci.org/anton-johansson/anton-johansson.com)
+
 My personal webpage, hosted here:
 * https://anton-johansson.com
 * https://anton-johansson.se
