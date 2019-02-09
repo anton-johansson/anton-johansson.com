@@ -1,99 +1,84 @@
 import React, { Component } from 'react';
-export default  class Resume extends Component {
+
+export default class Resume extends Component {
   render() {
-    let resumeData = this.props.resumeData;
+    const {settings, translate} = this.props;
     return (
       <section id="resume">
-
-         <div className="row education">
-
-            <div className="three columns header-col">
-               <h1><span>Education</span></h1>
-            </div>
-
-            <div className="nine columns main-col">
-              {
-                resumeData.education && resumeData.education.map((item)=>{
-                  return(
-                    <div className="row item">
-                       <div className="twelve columns">
-                          <h3>{item.UniversityName}</h3>
-                          <p className="info">
-                          {item.specialization}
-                          <span>&bull;</span> <em className="date">{item.MonthOfPassing} {item.YearOfPassing}</em></p>
-                          <p>
-                          {item.Achievements}
-                          </p>
-                       </div>
+        <div className="row education">
+          <div className="three columns header-col">
+            <h1><span>{translate('resume.education.title')}</span></h1>
+          </div>
+          <div className="nine columns main-col">
+            {
+              settings.education && settings.education.map(item => {
+                return (
+                  <div className="row item">
+                    <div className="twelve columns">
+                      <h3>{translate(`education.${item.educationKey}.name`)}</h3>
+                      <p className="info">
+                        {translate(`education.${item.educationKey}.specialization`)}
+                        <span>&bull;</span> <em className="date">{translate(`month.${item.monthOfPassing}`)} {item.yearOfPassing}</em>
+                      </p>
+                      <p>
+                        {item.achievements}
+                      </p>
                     </div>
-                  )
-                })
-              }
-            </div>
-         </div>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
         <div className="row work">
-            <div className="three columns header-col">
-               <h1><span>Work</span></h1>
-            </div>
-
-            <div className="nine columns main-col">
-              {
-                resumeData.work && resumeData.work.map((item) => {
-                  return(
-                    <div className="row item">
-                       <div className="twelve columns">
-                          <h3>{item.CompanyName}</h3>
-                          <p className="info">
-                          {item.specialization}
-                          <span>&bull;</span> <em className="date">{item.MonthOfLeaving} {item.YearOfLeaving}</em></p>
-                          <p>
-                          {item.Achievements}
-                          </p>
-                       </div>
-
+          <div className="three columns header-col">
+            <h1><span>{translate('resume.work.title')}</span></h1>
+          </div>
+          <div className="nine columns main-col">
+            {
+              settings.work && settings.work.map(item => {
+                return (
+                  <div className="row item">
+                    <div className="twelve columns">
+                      <h3>{translate(`work.${item.workKey}.name`)}</h3>
+                      <p className="info">
+                        {translate(`work.${item.workKey}.title`)}
+                        <span>&bull;</span>
+                        <em className="date">{translate(`month.${item.monthOfStart}`)} {item.yearOfStart} -{item.present && <span>present</span>}
+                        </em>
+                      </p>
+                      <p>
+                        {item.achievements}
+                      </p>
                     </div>
-
-                  )
-                })
-              }
-            </div> 
-         </div>
-
-
-         <div className="row skill">
-
-            <div className="three columns header-col">
-               <h1><span>Skills</span></h1>
-            </div>
-
-            <div className="nine columns main-col">
-
-               <p>
-               {resumeData.skillsDescription}
-               </p>
-
-   				<div className="bars">
-
-   				   <ul className="skills">
+                  </div>
+                )
+              })
+            }
+          </div> 
+        </div>
+        <div className="row skill">
+          <div className="three columns header-col">
+            <h1><span>{translate('resume.skills.title')}</span></h1>
+          </div>
+          <div className="nine columns main-col">
+   				  <div className="bars">
+   				    <ul className="skills">
                 {
-                  resumeData.skills && resumeData.skills.map((item) => {
-                    return(
+                  settings.skills && settings.skills.map(item => {
+                    return (
                       <li>
-                      <span className={`bar-expand ${item.skillname.toLowerCase()}`}>
-                      </span><em>{item.skillname}</em>
+                        <span className={`bar-expand ${item.name.toLowerCase()}`}>
+                        </span>
+                        <em>{item.name}</em>
                       </li>
                     )
                   })
                 }
-
-   					</ul>
-
-   				</div>
-
-   			</div>
-
-         </div>
-
+   					  </ul>
+   				  </div>
+   			  </div>
+        </div>
       </section>
     );
   }

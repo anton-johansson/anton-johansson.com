@@ -10,7 +10,7 @@ export default class App extends Component {
       <div className="App">
         <Header settings={settings} translate={translate}/>
         <About translate={translate}/>
-        <Resume resumeData={resumeData}/>
+        <Resume settings={settings} translate={translate}/>
         <Portfolio resumeData={resumeData}/>
         <Testimonials resumeData={resumeData}/>
         <Contact resumeData={resumeData}/>

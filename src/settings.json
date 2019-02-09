@@ -30,5 +30,33 @@
       "url": "https://open.spotify.com/user/antoon",
       "className": "fa fa-spotify"
     }
+  ],
+  "education": [
+    {
+      "educationKey": "university",
+      "monthOfPassing": 5,
+      "yearOfPassing": 2012
+    },
+    {
+      "educationKey": "highschool",
+      "monthOfPassing": 6,
+      "yearOfPassing": 2009
+    }
+  ],
+  "work": [
+    {
+      "workKey": "viskan",
+      "monthOfStart": 6,
+      "yearOfStart": 2012,
+      "present": true
+    }
+  ],
+  "skills": [
+    {
+      "name": "Containerization"
+    },
+    {
+      "name": "Contineous integration"
+    }
   ]
 }
