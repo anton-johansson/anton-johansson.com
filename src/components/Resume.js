@@ -13,7 +13,7 @@ export default class Resume extends Component {
             {
               settings.education && settings.education.map(item => {
                 return (
-                  <div className="row item">
+                  <div key={item.educationKey} className="row item">
                     <div className="twelve columns">
                       <h3>{translate(`education.${item.educationKey}.name`)}</h3>
                       <p className="info">
@@ -38,7 +38,7 @@ export default class Resume extends Component {
             {
               settings.work && settings.work.map(item => {
                 return (
-                  <div className="row item">
+                  <div key={item.workKey} className="row item">
                     <div className="twelve columns">
                       <h3>{translate(`work.${item.workKey}.name`)}</h3>
                       <p className="info">
@@ -67,9 +67,8 @@ export default class Resume extends Component {
                 {
                   settings.skills && settings.skills.map(item => {
                     return (
-                      <li>
-                        <span className={`bar-expand ${item.name.toLowerCase()}`}>
-                        </span>
+                      <li key={item.name}>
+                        <span className={`bar-expand ${item.name.toLowerCase()}`}/>
                         <em>{item.name}</em>
                       </li>
                     )
