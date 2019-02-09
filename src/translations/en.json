@@ -1,0 +1,12 @@
+{
+  "navigation.show": "Show navigation",
+  "navigation.hide": "Hide navigation",
+  "navigation.section.home": "Home",
+  "navigation.section.about": "About",
+  "navigation.section.resume": "Resumé",
+  "navigation.section.portfolio": "Works",
+  "navigation.section.testimonials": "Testimonials",
+  "navigation.section.contact": "Contact",
+  "home.title": "I am Anton Johansson",
+  "home.description": "I am a programmer and a systems architect."
+}

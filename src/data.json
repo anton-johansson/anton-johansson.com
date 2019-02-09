@@ -1,0 +1,34 @@
+{
+  "socialLinks": [
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/anton-johansson/",
+      "className": "fa fa-linkedin"
+    },
+    {
+      "name": "github",
+      "url": "https://github.com/anton-johansson",
+      "className": "fa fa-github"
+    },
+    {
+      "name": "skype",
+      "url": "https://twitter.com/_antonjohansson",
+      "className": "fa fa-twitter"
+    },
+    {
+      "name": "instagram",
+      "url": "https://www.instagram.com/anton.johansson/",
+      "className": "fa fa-instagram"
+    },
+    {
+      "name": "steam",
+      "url": "https://steamcommunity.com/id/antonjohansson_",
+      "className": "fa fa-steam-symbol"
+    },
+    {
+      "name": "spotify",
+      "url": "https://open.spotify.com/user/antoon",
+      "className": "fa fa-spotify"
+    }
+  ]
+}

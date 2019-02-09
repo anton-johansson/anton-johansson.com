@@ -1,25 +1,40 @@
 let resumeData = {
     "imagebaseurl":"https://rbhatia46.github.io/",
-    "name": "Rahul Bhatia",
-    "role": "Frontend Developer and Data Scientist",
-    "linkedinId":"Your LinkedIn Id",
+    "name": "Anton Johansson",
+    "role": "Java programmer and systems architect",
+    "linkedinId":"anton-johansson",
     "skypeid": "Your skypeid",
     "roleDescription": "I like dabbling in various parts of frontend development and like to learn about new technologies, write technical articles or simply play games in my free time.",
-    "socialLinks":[
+    "socialLinks": [
         {
-          "name":"linkedin",
-          "url":"https://www.linkedin.com/in/rahul-bhatia-67ba08121/",
-          "className":"fa fa-linkedin"
+          "name": "linkedin",
+          "url": "https://www.linkedin.com/in/anton-johansson/",
+          "className": "fa fa-linkedin"
         },
         {
-          "name":"github",
-          "url":"http://github.com/rbhatia46",
-          "className":"fa fa-github"
+          "name": "github",
+          "url": "https://github.com/anton-johansson",
+          "className": "fa fa-github"
         },
         {
-          "name":"skype",
-          "url":"http://twitter.com/rbhatia46",
-          "className":"fa fa-twitter"
+          "name": "skype",
+          "url": "https://twitter.com/_antonjohansson",
+          "className": "fa fa-twitter"
+        },
+        {
+          "name": "instagram",
+          "url": "https://www.instagram.com/anton.johansson/",
+          "className": "fa fa-instagram"
+        },
+        {
+          "name": "steam",
+          "url": "https://steamcommunity.com/id/antonjohansson_",
+          "className": "fa fa-steam-symbol"
+        },
+        {
+          "name": "spotify",
+          "url": "https://open.spotify.com/user/antoon",
+          "className": "fa fa-spotify"
         }
       ],
     "aboutme":"I am currently a pre-final year student at The LNM Institute of Information Technology and pursuing my B.Tech from here. I am a self taught Full Stack Web Developer, currently diving deeper into Machine Learning. I believe that to be successful in life, one needs to be obsessive with their dreams and keep working towards them.",
