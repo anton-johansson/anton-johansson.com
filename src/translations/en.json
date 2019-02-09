@@ -8,5 +8,9 @@
   "navigation.section.testimonials": "Testimonials",
   "navigation.section.contact": "Contact",
   "home.title": "I am Anton Johansson",
-  "home.description": "I am a programmer and a systems architect."
+  "home.description": "I am a programmer and a systems architect.",
+  "about.title": "About me",
+  "about.description": "I'm 28 years old, living in Borås, Sweden. I currently work for a company called Viskan System AB, which develops, maintains and supplies a E-commerce platform and an associated back-office system.",
+  "about.contact": "Contact details",
+  "about.website": "https://anton-johansson.com"
 }

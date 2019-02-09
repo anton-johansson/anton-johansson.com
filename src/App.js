@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header translate={translate} data={data}/>
-        <About resumeData={resumeData}/>
+        <Header data={data} translate={translate}/>
+        <About translate={translate}/>
         <Resume resumeData={resumeData}/>
         <Portfolio resumeData={resumeData}/>
         <Testimonials resumeData={resumeData}/>
