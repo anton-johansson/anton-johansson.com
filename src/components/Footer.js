@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import renderSocialLinks from './render-social-links';
+import renderSocialLinks from './utils/render-social-links';
 
 export default class Footer extends Component {
   render() {
