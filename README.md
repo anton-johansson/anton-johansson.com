@@ -7,11 +7,23 @@ My personal webpage, hosted here:
 * https://anton-johansson.se
 
 
-## Building and running
+## Building and running for development
 
 ```shell
 $ npm install
-$ npm start
+$ cd client && npm install
+$ cd ..
+$ npm run-script dev
+```
+
+
+## Build distribution
+
+```shell
+$ npm install
+$ cd client && npm install
+$ cd ..
+$ npm run-script build
 ```
 
 
