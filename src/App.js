@@ -11,7 +11,7 @@ export default class App extends Component {
         <Header settings={settings} translate={translate}/>
         <About translate={translate}/>
         <Resume settings={settings} translate={translate}/>
-        <Portfolio resumeData={resumeData}/>
+        <Portfolio settings={settings}/>
         <Testimonials resumeData={resumeData}/>
         <Contact resumeData={resumeData}/>
         <Footer settings={settings} translate={translate}/>

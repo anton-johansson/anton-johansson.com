@@ -440,6 +440,7 @@ ul#nav li.current a { color: #F06000; }
 .portfolio-item .item-wrap a {
    display: block;
    cursor: pointer;
+   background: #EBEEEE;
 }
 
 /* overlay */
