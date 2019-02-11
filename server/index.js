@@ -1,11 +1,35 @@
 const express = require('express');
+const rateLimit = require('express-rate-limit');
+const parser = require('body-parser');
+const {sendContactMessage} = require('./contact');
 
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.get('/api/test', (request, response) => {
-    response.send({anton: 'hej'});
+const rateLimiter = (minutes, numberOfRequests) => rateLimit({
+    windowMs: 1000 * 60 * minutes,
+    max: numberOfRequests
 });
+
 app.use(express.static('server/public'));
+app.use('/api/', parser.json());
+app.use('/api/', (_, response, next) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    response.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
+app.post('/api/send-contact-message', rateLimiter(10, 2), (request, response) => {
+    const {name, emailAddress, message} = request.body;
+    if (!name || !emailAddress || !message) {
+        response.status(400).send({
+            errorCode: 'contact.fields-missing'
+        });
+        return;
+    }
+    sendContactMessage(name, emailAddress, message);
+    response.sendStatus(200);
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
