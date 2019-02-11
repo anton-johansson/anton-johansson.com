@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { About, Contact, Footer, Header, Tools, Resume, Testimonials } from './components';
-import resumeData from './resumeData';
 import settings from './settings';
 import { translate } from './services';
 
@@ -13,7 +12,7 @@ export default class App extends Component {
         <Resume settings={settings} translate={translate}/>
         <Tools settings={settings}/>
         <Testimonials settings={settings}/>
-        <Contact resumeData={resumeData}/>
+        <Contact settings={settings} translate={translate}/>
         <Footer settings={settings} translate={translate}/>
       </div>
     );
