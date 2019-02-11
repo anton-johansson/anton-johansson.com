@@ -14,7 +14,7 @@ export default class Tools extends Component {
                     <div key={tool.name} className="columns tools-item">
                       <div className="item-wrap">
                         <a href={tool.url}>
-                          <img src={`images/tools/${tool.name}.svg`} className="item-img tool-img"/>
+                          <img src={`images/tools/${tool.name}.svg`} alt={tool.title} className="item-img tool-img"/>
                           <div className="overlay">
                             <div className="tools-item-meta">
                               <h5>{tool.title}</h5>

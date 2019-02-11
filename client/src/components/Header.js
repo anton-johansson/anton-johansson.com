@@ -9,7 +9,7 @@ export default class Header extends Component {
         <header id="home">
           <nav id="nav-wrap">
             <a className="mobile-btn" href="#nav-wrap" title={translate('navigation.show')}>{translate('navigation.show')}</a>
-            <a className="mobile-btn" href="#" title={translate('navigation.hide')}>{translate('navigation.hide')}</a>
+            <a className="mobile-btn" href="#nav-hide" title={translate('navigation.hide')}>{translate('navigation.hide')}</a>
             <ul id="nav" className="nav">
               <li className="current"><a className="smoothscroll" href="#home">{translate('navigation.section.home')}</a></li>
               <li><a className="smoothscroll" href="#about">{translate('navigation.section.about')}</a></li>
