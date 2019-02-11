@@ -1,13 +1,69 @@
 import React, { Component } from 'react';
+import ky from 'ky';
+import {getErrorCode, translate} from '../services';
 
 export default class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sending: false,
+      success: false,
+      okMessage: false,
+      errorMessage: '',
+      mail: {
+        name: '',
+        emailAddress: '',
+        message: ''
+      }
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onSend = this.onSend.bind(this);
+  }
+
+  onChange({target}) {
+    let mail = this.state.mail;
+    mail[target.name] = target.value;
+    this.setState({mail});
+  }
+
+  onSend() {
+    this.setState({sending: true});
+    ky.post('http://localhost:4000/api/send-contact-message', {json: this.state.mail})
+        .then(response => {
+            console.log(response);
+            this.setState({sending: false, success: true, okMessage: true, errorMessage: '', mail: {name: '', emailAddress: '', message: ''}});
+        })
+        .catch(async error => {
+            const errorCode = await getErrorCode(error.response);
+            const errorMessage = translate(errorCode);
+            console.log('Error when sending email:', errorCode);
+            this.setState({sending: false, success: false, okMessage: false, errorMessage});
+        });
+  }
+
   render() {
     const {translate, settings} = this.props;
+    const {okMessage, errorMessage, mail} = this.state;
     return (
       <section id="contact">
-        <div className="row section-head">
-          <div className="ten columns">
-            <p className="lead">{translate('contact.title')}</p>
+        <div className="row">
+          <div className="twelve columns">
+            <p className="lead">{translate('contact.form')}</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="twelve columns">
+            <input type="text" name='name'placeholder={translate('contact.form.name')} value={mail.name} onChange={this.onChange}/>
+            <input type="text" name='emailAddress' placeholder={translate('contact.form.email')} value={mail.emailAddress} onChange={this.onChange}/>
+            <textarea name='message' placeholder={translate('contact.form.message')} value={mail.message} onChange={this.onChange}/>
+            {okMessage && <h2 className="success">{translate('contact.form.success')}</h2>}
+            {errorMessage && <h2 className="error">{errorMessage}</h2>}
+            <input type="button" value={translate('contact.form.send')} onClick={this.onSend} disabled={okMessage}/>
+          </div>
+        </div>
+        <div className="row">
+          <div className="twelve columns">
+            <p className="lead">{translate('contact.raw-email')}</p>
           </div>
         </div>
         <div className="row">

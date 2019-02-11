@@ -19,7 +19,14 @@
   "resume.education.title": "Education",
   "resume.work.title": "Work",
   "resume.skills.title": "Skills",
-  "contact.title": "Feel free to contact me.",
+  "contact.form": "Feel free to contact me using this form:",
+  "contact.raw-email": "Or send me an e-mail directly using this address:",
+  "contact.form.name": "Name",
+  "contact.form.email": "E-mail address",
+  "contact.form.message": "Message...",
+  "contact.form.send": "Send",
+  "contact.form.fields-missing": "Not all fields are given",
+  "contact.form.success": "E-mail sent!",
   "education.university.name": "Borås University",
   "education.university.specialization": "System architect",
   "education.highschool.name": "John Bauer gymnasium",
@@ -37,5 +44,7 @@
   "month.9": "September",
   "month.10": "October",
   "month.11": "November",
-  "month.12": "December"
+  "month.12": "December",
+  "too-many-requests": "Please wait a bit until you send more messages",
+  "unknown-error": "An unknown error occurred"
 }

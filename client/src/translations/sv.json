@@ -19,7 +19,14 @@
   "resume.education.title": "Utbildning",
   "resume.work.title": "Jobb",
   "resume.skills.title": "Färdigheter",
-  "contact.title": "Kontakta mig gärna.",
+  "contact.form": "Kontakta mig gärna med formuläret nedan:",
+  "contact.raw-email": "Eller skicka ett mail direkt till följande adress:",
+  "contact.form.name": "Namn",
+  "contact.form.email": "E-post adress",
+  "contact.form.message": "Meddelande...",
+  "contact.form.send": "Skicka",
+  "contact.form.fields-missing": "Vissa fält saknas",
+  "contact.form.success": "Meddelandet har skickats!",
   "education.university.name": "Högskolan i Borås",
   "education.university.specialization": "Systemarkitekt",
   "education.highschool.name": "John Bauer gymnasiumet",
@@ -37,5 +44,7 @@
   "month.9": "September",
   "month.10": "Oktober",
   "month.11": "November",
-  "month.12": "December"
+  "month.12": "December",
+  "too-many-requests": "För många anrop gjorde, avvakta lite",
+  "unknown-error": "Ett okänt fel uppstod"
 }
