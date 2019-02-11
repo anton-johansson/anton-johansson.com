@@ -24,6 +24,7 @@ $ npm install
 $ cd client && npm install
 $ cd ..
 $ npm run-script build
+$ docker build -t anton-johansson.com .
 ```
 
 

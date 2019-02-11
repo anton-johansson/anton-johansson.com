@@ -1,5 +1,10 @@
 language: node_js
 node_js:
   - 10
+services:
+  - docker
 script:
-  - cd client && CI=true npm test
+  - cd client && npm install && CI=true npm test
+  - cd ..
+  - npm run-script build
+  - docker build -t anton-johansson.com .
