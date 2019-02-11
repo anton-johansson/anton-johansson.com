@@ -12,7 +12,7 @@ export default class App extends Component {
         <About translate={translate}/>
         <Resume settings={settings} translate={translate}/>
         <Tools settings={settings}/>
-        <Testimonials resumeData={resumeData}/>
+        <Testimonials settings={settings}/>
         <Contact resumeData={resumeData}/>
         <Footer settings={settings} translate={translate}/>
       </div>
