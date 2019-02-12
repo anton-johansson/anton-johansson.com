@@ -10,7 +10,10 @@
   "home.title": "Jag är Anton Johansson",
   "home.description": "Jag är en programmere och en system arkitekt.",
   "about.title": "Om mig",
-  "about.description": "Jag är 28 år gammal och bor i Borås, Sverige. Jag jobbar för tillfället på ett företag som heter Viskan System AB, som utvecklar, underhåller och tillhandahåller en E-handelsplatform och ett tillhörande back-office system.",
+  "about.description": [
+    "Jag är 28 år gammal och bor i Borås, Sverige. Jag jobbar för tillfället på ett företag som heter Viskan System AB, som utvecklar, underhåller och tillhandahåller en E-handelsplatform och ett tillhörande back-office system. Huvudsakligen så arbetar jag med att utveckla systemet men jag tenderar ofta att dra mig åt \"DevOps\"-hållet och jobbar mycket med att bygga CI-pipelines and containerisering av applikationer.",
+    "Utöver programmering så gillar jag även att spela datorspel. Just nu är det mest Apex Legends och Rocket League som gäller. Skicka ett meddelande på Steam!"
+  ],
   "about.contact": "Kontaktuppgifter",
   "about.website": "https://anton-johansson.se",
   "resume.education.title": "Utbildning",
