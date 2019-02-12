@@ -57,7 +57,7 @@
       "name": "Containerization"
     },
     {
-      "name": "Contineous integration"
+      "name": "Continuous integration"
     }
   ],
   "tools": [
@@ -95,7 +95,7 @@
       "name": "jenkins",
       "title": "Jenkins CI",
       "url": "https://jenkins.io",
-      "description": "Contineous integration"
+      "description": "Continuous integration"
     },
     {
       "name": "nginx",
