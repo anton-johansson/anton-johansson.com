@@ -10,7 +10,10 @@ const translations = {
 
 export default labelKey => {
   const languageCode = getLanguageCode();
-  const translation = translations[languageCode][labelKey] || `%${labelKey}%`;
+  const translation = translations[languageCode][labelKey];
+  if (translation === undefined) {
+    return `%${labelKey}%`;
+  }
   if (Array.isArray(translation)) {
     return translation.map(value => {
       return <p>{value}</p>

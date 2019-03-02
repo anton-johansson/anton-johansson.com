@@ -34,21 +34,27 @@
   ],
   "education": [
     {
-      "educationKey": "university",
-      "monthOfPassing": 5,
-      "yearOfPassing": 2012
-    },
-    {
       "educationKey": "highschool",
       "monthOfPassing": 6,
       "yearOfPassing": 2009
+    },
+    {
+      "educationKey": "university",
+      "monthOfPassing": 5,
+      "yearOfPassing": 2012
     }
   ],
   "work": [
     {
-      "workKey": "viskan",
+      "workKey": "viskan-developer",
       "monthOfStart": 6,
       "yearOfStart": 2012,
+      "present": true
+    },
+    {
+      "workKey": "viskan-partner",
+      "monthOfStart": 10,
+      "yearOfStart": 2016,
       "present": true
     }
   ],
