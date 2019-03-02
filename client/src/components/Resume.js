@@ -21,7 +21,7 @@ export default class Resume extends Component {
                         <span>&bull;</span> <em className="date">{translate(`month.${item.monthOfPassing}`)} {item.yearOfPassing}</em>
                       </p>
                       <p>
-                        {item.achievements}
+                        {translate(`education.${item.educationKey}.description`)}
                       </p>
                     </div>
                   </div>
@@ -48,7 +48,7 @@ export default class Resume extends Component {
                         </em>
                       </p>
                       <p>
-                        {item.achievements}
+                        {translate(`work.${item.workKey}.description`)}
                       </p>
                     </div>
                   </div>
