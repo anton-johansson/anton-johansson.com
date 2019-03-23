@@ -24,7 +24,7 @@ app.post('/api/send-contact-message', rateLimiter(10, 2), (request, response) =>
     const {name, emailAddress, message} = request.body;
     if (!name || !emailAddress || !message) {
         response.status(400).send({
-            errorCode: 'contact.fields-missing'
+            errorCode: 'contact.form.fields-missing'
         });
         return;
     }
