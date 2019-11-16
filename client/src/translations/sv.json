@@ -33,8 +33,12 @@
   "education.university.name": "Högskolan i Borås",
   "education.university.specialization": "Systemarkitekt",
   "education.university.description": "",
-  "work.viskan.name": "Viskan System AB",
-  "work.viskan.title": "Systemutvecklare",
+  "work.viskan-developer.name": "Viskan System AB",
+  "work.viskan-developer.title": "Systemutvecklare",
+  "work.viskan-developer.description": "Huvudsakligen anställd som en backendutvecklare (med fokus på Java och SQL). Det har varit en salig blandning av nyutveckling av funktioner önskade av kunder men även interna förbättringar, allt från prestandaoptimeringar till att se till att vår tekniska skuld inte blir för stor. Genom åren har jag sakta men säkert gått in på mer på DevOps-området, där jag har jobbat mycket med att se till att våra bygg-flöden fungerar (Maven, Jenkins/Gitlab CI, Nexus) men har även satt upp och underhåller andra kringtjänster såsom Mattermost och Gitlab. På senare tid har jag även fokuserat väldigt mycket på containerisering, där jag har sett till att våra applikationer kan köras som containers. Jag har utvärderat och konfigurerat både Docker Swarm och Kubernetes, och har insett att jag brinner väldigt mycket för just Kubernetes.",
+  "work.viskan-partner.name": "Viskan System AB",
+  "work.viskan-partner.title": "Partner och integration",
+  "work.viskan-partner.description": "I och med denna rollen så fick jag tekniskt ansvar för våra integrationer mot våra tredjepartare och kommunikationen med deras tekniker. Framförallt innebär detta integrationer mot betalningsleverantörer så som Klarna och PayPal. Jag har tagit fram ett ramverk för att hantera dessa betalningsflöden - från kassan till kundtjänst, leverans och retur) och sett till att det är enkelt att plugga in nya integrationer mot andra leverantörer.",
   "month.1": "Januari",
   "month.2": "Februari",
   "month.3": "Mars",
@@ -48,5 +52,6 @@
   "month.11": "November",
   "month.12": "December",
   "too-many-requests": "För många anrop gjorde, avvakta lite",
-  "unknown-error": "Ett okänt fel uppstod"
+  "unknown-error": "Ett okänt fel uppstod",
+  "present": "nutid"
 }

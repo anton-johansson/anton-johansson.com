@@ -1,5 +1,6 @@
 const topDomainToLanguageMappings = {
-  '.se': 'sv'
+  '.se': 'sv',
+  '.com': 'en'
 };
 const getTopDomain = hostname => {
   const lastDotIndex = hostname.lastIndexOf('.');
@@ -12,5 +13,5 @@ const getTopDomain = hostname => {
 export default () => {
   const hostname = document.location.hostname;
   const topDomain = getTopDomain(hostname);
-  return topDomainToLanguageMappings[topDomain] || 'sv';
+  return topDomainToLanguageMappings[topDomain] || 'en';
 };

@@ -52,5 +52,6 @@
   "month.11": "November",
   "month.12": "December",
   "too-many-requests": "Please wait a bit until you send more messages",
-  "unknown-error": "An unknown error occurred"
+  "unknown-error": "An unknown error occurred",
+  "present": "present"
 }

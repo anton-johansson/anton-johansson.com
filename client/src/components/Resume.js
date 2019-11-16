@@ -44,7 +44,7 @@ export default class Resume extends Component {
                       <p className="info">
                         {translate(`work.${item.workKey}.title`)}
                         <span>&bull;</span>
-                        <em className="date">{translate(`month.${item.monthOfStart}`)} {item.yearOfStart} -{item.present && <span>present</span>}
+                        <em className="date">{translate(`month.${item.monthOfStart}`)} {item.yearOfStart} -{item.present && <span>{translate('present')}</span>}
                         </em>
                       </p>
                       <p>
