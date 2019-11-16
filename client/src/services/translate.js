@@ -8,7 +8,15 @@ const translations = {
   sv: swedish
 }
 
-export default labelKey => {
+const injectParams = (value, params) => {
+    let output = value;
+    Object.keys(params).forEach(key => {
+        output = output.replace(`\${${key}}`, params[key]);
+    });
+    return output;
+};
+
+export default (labelKey, params = {}) => {
   const languageCode = getLanguageCode();
   const translation = translations[languageCode][labelKey];
   if (translation === undefined) {
@@ -16,9 +24,9 @@ export default labelKey => {
   }
   if (Array.isArray(translation)) {
     return translation.map(value => {
-      return <p>{value}</p>
+      return <p>{injectParams(value, params)}</p>
     });
   } else {
-    return translation;
+    return injectParams(translation, params);
   }
 };

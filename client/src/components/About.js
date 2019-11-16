@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+const age = (() => {
+    const birthDate = Date.parse("1990-04-14")
+    const now = Date.now();
+    return Math.floor((now - birthDate) / (365 * 24 * 60 * 60 * 1000));
+})();
+
 export default class About extends Component {
   render() {
     const {translate} = this.props;
@@ -11,7 +17,7 @@ export default class About extends Component {
           </div>
           <div className="nine columns main-col">
             <h2>{translate('about.title')}</h2>
-            <p>{translate('about.description')}</p>
+            <p>{translate('about.description', {age})}</p>
             <div className="row">
               <div className="columns contact-details">
                 <h2>{translate('about.contact')}</h2>

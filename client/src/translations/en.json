@@ -8,11 +8,11 @@
   "navigation.section.testimonials": "Testimonials",
   "navigation.section.contact": "Contact",
   "home.title": "I am Anton Johansson",
-  "home.description": "I am a programmer and a systems architect.",
+  "home.description": "I am a programmer and a DevOps engineer.",
   "about.title": "About me",
   "about.description": [
-    "I'm 28 years old, living in Borås, Sweden. I currently work for a company called Viskan System AB, which develops, maintains and supplies a E-commerce platform and an associated back-office system. I do a lot of coding during my day but I also tend to lean a lot towards the dev-ops direction, working with build pipelines and adapt applications for containerised environments.",
-    "Other than coding I like to play computer games. Currently it's mostly Apex Legends and Rocket League. Hit me up using my Steam profile!"
+    "I'm ${age} years old, living in Borås, Sweden. I currently work for a company called Viskan System AB, where we develop, maintain and supply an E-commerce platform and an associated back-office system. I do a lot of coding during my day but I also tend to lean a lot towards the dev-ops direction, working with build pipelines and adapt applications for containerised environments.",
+    "Other than coding I like to play computer games. Currently it's mostly Rocket League where I play in a league called Svenska Raketligan. Hit me up using my Steam profile!"
   ],
   "about.contact": "Contact details",
   "about.website": "https://anton-johansson.com",
@@ -27,8 +27,6 @@
   "contact.form.send": "Send",
   "contact.form.fields-missing": "Not all fields are given",
   "contact.form.success": "E-mail sent!",
-  "education.university.name": "Borås University",
-  "education.university.specialization": "System architect",
   "education.highschool.name": "John Bauer gymnasium",
   "education.highschool.specialization": "IT program",
   "education.highschool.description": "An all-in-all basic IT program with classes varying from programming to regular Unix usage. A very chill place where I got to know many of my cloest friends today, however I must admit that the education itself wasn't very rewarding.",

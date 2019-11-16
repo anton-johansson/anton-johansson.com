@@ -12,5 +12,5 @@ const getTopDomain = hostname => {
 export default () => {
   const hostname = document.location.hostname;
   const topDomain = getTopDomain(hostname);
-  return topDomainToLanguageMappings[topDomain] || 'en';
+  return topDomainToLanguageMappings[topDomain] || 'sv';
 };
