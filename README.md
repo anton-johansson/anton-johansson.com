@@ -27,6 +27,20 @@ $ npm run-script build
 $ docker build -t anton-johansson.com .
 ```
 
+## Spotify
+
+Generate a new refresh token by going to this URL:
+
+```
+https://accounts.spotify.com/authorize?client_id=<client-id>&response_type=code&redirect_uri=https%3A%2F%2Foanton-johansson.com%2F&scope=user-read-currently-playing
+```
+
+Use the received `code` to create the refresh token with this `curl` command:
+
+```
+$ curl -X POST https://accounts.spotify.com/api/token?grant_type=authorization_code&code=<code>&redirect_url=https%3A%2F%2Fanton-johansson.com%2F&client_secret=<client-secret>&client_id=<client-id>
+```
+
 
 ## Credits
 

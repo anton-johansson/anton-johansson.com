@@ -32,6 +32,7 @@ export default class Header extends Component {
             <ul id="nav" className="nav">
               <li className="current"><a className="smoothscroll" href="#home">{translate('navigation.section.home')}</a></li>
               <li><a className="smoothscroll" href="#about">{translate('navigation.section.about')}</a></li>
+              <li><a className="smoothscroll" href="#activity">{translate('navigation.section.activity')}</a></li>
               <li><a className="smoothscroll" href="#resume">{translate('navigation.section.resume')}</a></li>
               <li><a className="smoothscroll" href="#tools">{translate('navigation.section.tools')}</a></li>
               <li><a className="smoothscroll" href="#testimonials">{translate('navigation.section.testimonials')}</a></li>

@@ -1,31 +1,11 @@
-/*
-=====================================================================
-*   Ceevee v1.0 Layout Stylesheet
-*   url: styleshout.com
-*   03-18-2014
-=====================================================================
-
-   TOC:
-   a. General Styles
-   b. Header Styles
-   c. About Section
-   d. Resume Section
-   e. Tools Section
-   f. Call To Action Section
-   g. Testimonials Section
-   h. Contact Section
-   i. Footer
-
-===================================================================== */
-
 /* ------------------------------------------------------------------ */
-/* a. General Styles
+/* General styles
 /* ------------------------------------------------------------------ */
 
 body { background: #0f0f0f; }
 
 /* ------------------------------------------------------------------ */
-/* b. Header Styles
+/* Header styles
 /* ------------------------------------------------------------------ */
 
 header {
@@ -52,7 +32,7 @@ header .banner {
    vertical-align: middle;
    margin: 0 auto;
    width: 85%;
-   padding-bottom: 30px;s
+   padding-bottom: 30px;
    text-align: center;
 }
 
@@ -187,7 +167,7 @@ ul#nav li.current a { color: #F06000; }
 
 
 /* ------------------------------------------------------------------ */
-/* c. About Section
+/* About section
 /* ------------------------------------------------------------------ */
 
 #about {
@@ -236,7 +216,52 @@ ul#nav li.current a { color: #F06000; }
 
 
 /* ------------------------------------------------------------------ */
-/* d. Resume Section
+/* Activity section
+/* ------------------------------------------------------------------ */
+
+#activity {
+  background: #1A1A1A;
+  padding-top: 96px;
+  padding-bottom: 66px;
+  overflow: hidden;
+}
+
+#activity p.lead {
+  font: 18px/36px 'opensans-light', sans-serif;
+  padding-right: 3%;
+}
+
+#activity .main-col {
+  padding-right: 5%;
+}
+
+#activity a, #activity a:visited  { color: #FFFFFF; }
+#activity a:hover, #activity a:focus { color: #11ABB0; }
+
+#activity h1 {
+   font: 18px/24px 'opensans-bold', sans-serif;
+   color: #FFFFFF;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+#activity h2 {
+   font: 24px/28px 'opensans-bold', sans-serif;
+   color: #FFFFFF;
+}
+#activity .spotify .artwork {
+  float: left;
+  padding: 5px;
+  padding-right: 10px;
+}
+#activity .spotify .info {
+  padding: 7px;
+}
+#activity .spotify .trackName {
+  font-size: 20px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Resume section
 /* ------------------------------------------------------------------ */
 
 #resume {
@@ -286,7 +311,7 @@ ul#nav li.current a { color: #F06000; }
 }
 
 /*----------------------------------------------*/
-/*	Skill Bars
+/* Skill bars
 /*----------------------------------------------*/
 
 .bars {
@@ -411,7 +436,7 @@ ul#nav li.current a { color: #F06000; }
 }
 
 /* ------------------------------------------------------------------ */
-/* e. Tools Section
+/* Tools section
 /* ------------------------------------------------------------------ */
 
 #tools {
@@ -583,7 +608,7 @@ ul#nav li.current a { color: #F06000; }
 }
 
 /* ------------------------------------------------------------------ */
-/* f. Call To Action Section
+/* Call To Action Section
 /* ------------------------------------------------------------------ */
 
 #call-to-action {
@@ -640,7 +665,7 @@ call-to-action .button {
 }
 
 /* ------------------------------------------------------------------
-/* g. Testimonials
+/* Testimonials
 /* ------------------------------------------------------------------ */
 
 #testimonials {
@@ -789,7 +814,7 @@ call-to-action .button {
 }
 
 /* ------------------------------------------------------------------ */
-/* h. Contact Section
+/* Contact section
 /* ------------------------------------------------------------------ */
 
 #contact {
@@ -934,7 +959,7 @@ call-to-action .button {
 
 
 /* ------------------------------------------------------------------ */
-/* i. Footer
+/* Footer
 /* ------------------------------------------------------------------ */
 
 footer {
