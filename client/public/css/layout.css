@@ -250,8 +250,13 @@ ul#nav li.current a { color: #F06000; }
 }
 #activity .spotify .artwork {
   float: left;
-  padding: 5px;
-  padding-right: 10px;
+  margin: 5px;
+  margin-right: 10px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  width: 64px;
+  height: 64px;
 }
 #activity .spotify .info {
   padding: 7px;

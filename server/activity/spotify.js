@@ -54,13 +54,14 @@ const getTrackInfoFromSpotifyAPI = async () => {
         trackInfo = EMPTY;
     } else {
         const track = response.body.item;
+        const albumCover = track.album.images.find(image => image.width == 64) || {url: '/images/unknown-album.png'};
         const info = {
             trackName: track.name,
             trackURL: track.external_urls.spotify,
             artistName: track.artists[0].name,
             artistURL: track.artists[0].external_urls.spotify,
             albumName: track.album.name,
-            albumArtworkURL: track.album.images.find(image => image.width === 64).url
+            albumArtworkURL: albumCover.url
         };
         trackInfo = info;
     }
