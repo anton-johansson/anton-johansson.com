@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ky from 'ky';
 import {getErrorCode, translate} from '../services';
+import apiEndpoint from './utils/api-endpoint';
 
 export default class Contact extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class Contact extends Component {
 
   onSend() {
     this.setState({sending: true});
-    ky.post('http://localhost:4000/api/send-contact-message', {json: this.state.mail})
+    ky.post(`${apiEndpoint}/api/send-contact-message`, {json: this.state.mail})
         .then(response => {
             console.log(response);
             this.setState({sending: false, success: true, okMessage: true, errorMessage: '', mail: {name: '', emailAddress: '', message: ''}});

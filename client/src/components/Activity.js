@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ky from 'ky';
+import apiEndpoint from './utils/api-endpoint';
 
 export default class Activity extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ export default class Activity extends Component {
 
     componentDidMount() {
         const refreshTrackInfo = () => {
-            ky.get('http://localhost:4000/api/activity/spotify')
+            ky.get(`${apiEndpoint}/api/activity/spotify`)
                 .then(async response => {
                     const trackInfo = await response.json();
                     this.setState({trackInfo});
