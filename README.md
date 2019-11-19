@@ -13,7 +13,7 @@ My personal webpage, hosted here:
 $ npm install
 $ cd client && npm install
 $ cd ..
-$ npm run-script dev
+$ npm run dev
 ```
 
 
@@ -23,8 +23,8 @@ $ npm run-script dev
 $ npm install
 $ cd client && npm install
 $ cd ..
-$ npm run-script build
-$ docker build -t anton-johansson.com .
+$ npm run build
+$ docker build -t antonjohansson/anton-johansson.com .
 ```
 
 ## Spotify
