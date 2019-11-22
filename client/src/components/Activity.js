@@ -32,24 +32,29 @@ export default class Activity extends Component {
     }
 
     render() {
+        const {translate} = this.props;
         const {trackInfo} = this.state;
         return (
             <section id="activity">
                 <div className="row">
                     <div className="three columns header-col">
-                        <h1><span>Activity</span></h1>
+                        <h1><span>{translate('activity.title')}</span></h1>
                     </div>
                     <div className="nine columns main-col">
-                        <h2 className="spotify header">Currently listening to</h2>
+                        <h3 className="spotify header">{translate('activity.spotify.currently-listening-to')}</h3>
                         <div className="spotify container">
-                            {!trackInfo.trackName && <div>Nothing</div>}
-                            <div className="spotify artwork">
-                                <img src={trackInfo.albumArtworkURL} alt={trackInfo.albumName}/>
-                            </div>
-                            <div className="spotify info">
-                                <div className="spotify trackName"><a href={trackInfo.trackURL}>{trackInfo.trackName}</a></div>
-                                <div className="spotify artistName"><a href={trackInfo.artistURL}>{trackInfo.artistName}</a></div>
-                            </div>
+                            {!trackInfo.trackName && <div>{translate('activity.spotify.not-playing')}</div>}
+                            {trackInfo.trackName &&
+                                <div>
+                                    <div className="spotify artwork">
+                                        <img src={trackInfo.albumArtworkURL} alt={trackInfo.albumName}/>
+                                    </div>
+                                    <div className="spotify info">
+                                        <div className="spotify trackName"><a href={trackInfo.trackURL}>{trackInfo.trackName}</a></div>
+                                        <div className="spotify artistName"><a href={trackInfo.artistURL}>{trackInfo.artistName}</a></div>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

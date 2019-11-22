@@ -239,18 +239,21 @@ ul#nav li.current a { color: #F06000; }
 #activity a:hover, #activity a:focus { color: #11ABB0; }
 
 #activity h1 {
-   font: 18px/24px 'opensans-bold', sans-serif;
-   color: #FFFFFF;
-   text-transform: uppercase;
-   letter-spacing: 1px;
+  font: 18px/24px 'opensans-bold', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-#activity h2 {
-   font: 24px/28px 'opensans-bold', sans-serif;
-   color: #FFFFFF;
+#activity h1 span {
+  border-bottom: 3px solid #11ABB0;
+  padding-bottom: 6px;
+}
+#activity h3 {
+  color: #FFFFFF;
 }
 #activity .spotify .artwork {
   float: left;
-  margin: 5px;
+  margin-top: 5px;
   margin-right: 10px;
   border-style: solid;
   border-color: white;

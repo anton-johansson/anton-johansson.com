@@ -9,7 +9,7 @@ export default class App extends Component {
       <div className="App">
         <Header settings={settings} translate={translate}/>
         <About translate={translate}/>
-        <Activity/>
+        <Activity translate={translate}/>
         <Resume settings={settings} translate={translate}/>
         <Tools settings={settings}/>
         <Testimonials settings={settings}/>
