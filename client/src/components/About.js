@@ -17,7 +17,7 @@ export default class About extends Component {
           </div>
           <div className="nine columns main-col">
             <h2>{translate('about.title')}</h2>
-            <p>{translate('about.description', {age})}</p>
+            {translate('about.description', {age})}
             <div className="row">
               <div className="columns contact-details">
                 <h2>{translate('about.contact')}</h2>

@@ -20,10 +20,6 @@ $ npm run dev
 ## Build distribution
 
 ```shell
-$ npm install
-$ cd client && npm install
-$ cd ..
-$ npm run build
 $ docker build -t antonjohansson/anton-johansson.com .
 ```
 

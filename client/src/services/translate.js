@@ -17,16 +17,14 @@ const injectParams = (value, params) => {
 };
 
 export default (labelKey, params = {}) => {
-  const languageCode = getLanguageCode();
-  const translation = translations[languageCode][labelKey];
-  if (translation === undefined) {
-    return `%${labelKey}%`;
-  }
-  if (Array.isArray(translation)) {
-    return translation.map(value => {
-      return <p>{injectParams(value, params)}</p>
-    });
-  } else {
-    return injectParams(translation, params);
-  }
+    const languageCode = getLanguageCode();
+    const translation = translations[languageCode][labelKey];
+    if (translation === undefined) {
+        return `%${labelKey}%`;
+    }
+    if (Array.isArray(translation)) {
+        return <div>{translation.map((value, index) => <p key={index}>{injectParams(value, params)}</p>)}</div>
+    } else {
+        return injectParams(translation, params);
+    }
 };
