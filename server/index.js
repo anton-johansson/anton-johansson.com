@@ -2,7 +2,7 @@ const express = require('express');
 const rateLimit = require('express-rate-limit');
 const parser = require('body-parser');
 const {sendContactMessage} = require('./contact');
-const {spotify} = require('./activity');
+const {spotify, steam} = require('./activity');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -33,11 +33,13 @@ app.post('/api/send-contact-message', rateLimiter(10, 2), (request, response) =>
     response.sendStatus(200);
 });
 
-app.get('/api/activity/spotify', (_, response) => {
+app.get('/api/activity', (_, response) => {
     const trackInfo = spotify.getTrackInfo();
-    response.send(trackInfo);
+    const steamInfo = steam.getSteamInfo();
+    response.send({trackInfo, steamInfo});
 });
 
 spotify.initiateJob();
+steam.initiateJob();
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

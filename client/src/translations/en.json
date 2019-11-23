@@ -20,6 +20,8 @@
   "activity.title": "Activity",
   "activity.spotify.currently-listening-to": "Currently listening to",
   "activity.spotify.not-playing": "Not listening to anything.",
+  "activity.steam.currently-playing": "Currently playing",
+  "activity.steam.not-playing": "Not playing anything.",
   "resume.education.title": "Education",
   "resume.work.title": "Work",
   "resume.skills.title": "Skills",

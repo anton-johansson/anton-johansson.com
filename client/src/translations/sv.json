@@ -20,6 +20,8 @@
   "activity.title": "Aktivitet",
   "activity.spotify.currently-listening-to": "Lyssnar just nu på",
   "activity.spotify.not-playing": "Lyssnar inte på någonting.",
+  "activity.steam.currently-playing": "Spelar just nu",
+  "activity.steam.not-playing": "Spelar ingenting just nu.",
   "resume.education.title": "Utbildning",
   "resume.work.title": "Jobb",
   "resume.skills.title": "Färdigheter",

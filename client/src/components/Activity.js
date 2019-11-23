@@ -13,16 +13,20 @@ export default class Activity extends Component {
                 artistURL: '',
                 albumName: '',
                 albumArtworkURL: ''
+            },
+            steamInfo: {
+                gameTitle: '',
+                artworkURL: ''
             }
         };
     }
 
     componentDidMount() {
         const refreshTrackInfo = () => {
-            ky.get(`${apiEndpoint}/api/activity/spotify`)
+            ky.get(`${apiEndpoint}/api/activity`)
                 .then(async response => {
-                    const trackInfo = await response.json();
-                    this.setState({trackInfo});
+                    const {trackInfo, steamInfo} = await response.json();
+                    this.setState({trackInfo, steamInfo});
                     console.log('track info:', trackInfo);
                 });
 
@@ -33,7 +37,7 @@ export default class Activity extends Component {
 
     render() {
         const {translate} = this.props;
-        const {trackInfo} = this.state;
+        const {trackInfo, steamInfo} = this.state;
         return (
             <section id="activity">
                 <div className="row">
@@ -41,17 +45,33 @@ export default class Activity extends Component {
                         <h1><span>{translate('activity.title')}</span></h1>
                     </div>
                     <div className="nine columns main-col">
-                        <h3 className="spotify header">{translate('activity.spotify.currently-listening-to')}</h3>
-                        <div className="spotify container">
+                        <h3>{translate('activity.spotify.currently-listening-to')}</h3>
+                        <div className="spotify">
                             {!trackInfo.trackName && <div>{translate('activity.spotify.not-playing')}</div>}
                             {trackInfo.trackName &&
                                 <div>
-                                    <div className="spotify artwork">
+                                    <div className="artwork">
                                         <img src={trackInfo.albumArtworkURL} alt={trackInfo.albumName}/>
                                     </div>
-                                    <div className="spotify info">
+                                    <div className="info">
                                         <div className="spotify trackName"><a href={trackInfo.trackURL}>{trackInfo.trackName}</a></div>
                                         <div className="spotify artistName"><a href={trackInfo.artistURL}>{trackInfo.artistName}</a></div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div className="nine columns main-col">
+                        <h3>{translate('activity.steam.currently-playing')}</h3>
+                        <div className="steam">
+                            {!steamInfo.gameTitle && <div>{translate('activity.steam.not-playing')}</div>}
+                            {steamInfo.gameTitle &&
+                                <div>
+                                    <div>
+                                        <div className="steam gameTitle">{steamInfo.gameTitle}</div>
+                                    </div>
+                                    <div>
+                                        <img className="artwork" src={steamInfo.artworkURL} alt={steamInfo.gameTitle}/>
                                     </div>
                                 </div>
                             }

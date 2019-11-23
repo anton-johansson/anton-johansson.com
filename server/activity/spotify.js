@@ -71,7 +71,10 @@ const getTrackInfoFromSpotifyAPI = async () => {
 
 const initiateJob = () => {
     if (refreshToken && clientId && clientSecret) {
+        console.log('Initializing Spotify job');
         getTrackInfoFromSpotifyAPI();
+    } else {
+        console.log('No Spotify credentials');
     }
 };
 
