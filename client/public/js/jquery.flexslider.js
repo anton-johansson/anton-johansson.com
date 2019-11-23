@@ -4,6 +4,7 @@
  * Contributing Author: Tyler Smith
  */
 ;
+let focused = true;
 (function ($) {
 
   //FlexSlider: Object Instance
@@ -26,8 +27,7 @@
         carousel = (slider.vars.itemWidth > 0),
         fade = slider.vars.animation === "fade",
         asNav = slider.vars.asNavFor !== "",
-        methods = {},
-        focused = true;
+        methods = {};
 
     // Store a reference to the slider object
     $.data(el, "flexslider", slider);
