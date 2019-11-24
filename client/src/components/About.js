@@ -8,7 +8,8 @@ const age = (() => {
 
 export default class About extends Component {
   render() {
-    const {translate} = this.props;
+    const {translate, settings} = this.props;
+    const {emailAddress} = settings;
     return (
       <section id="about">
         <div className="row">
@@ -27,6 +28,8 @@ export default class About extends Component {
                   <span>Borås, Sweden</span>
                   <br></br>
                   <span><a href={translate('about.website')}>{translate('about.website')}</a></span>
+                  <br></br>
+                  <span><a href={`mailto:${emailAddress}`}>{emailAddress}</a></span>
                 </p>
               </div>
             </div>

@@ -70,7 +70,7 @@ export default class Contact extends Component {
         <div className="row">
           <aside className="eigth columns footer-widgets">
             <div className="widget">
-              <h4>E-mail: {settings.email}</h4>
+              <h4>E-mail: {settings.emailAddress}</h4>
             </div>
           </aside>
         </div>

@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header settings={settings} translate={translate}/>
-        <About translate={translate}/>
+        <About settings={settings} translate={translate}/>
         <Activity translate={translate}/>
         <Resume settings={settings} translate={translate}/>
         <Tools settings={settings}/>
