@@ -40,7 +40,6 @@ export default class Header extends Component {
                     <li><a className="smoothscroll" href="#activity">{translate('navigation.section.activity')}</a></li>
                     <li><a className="smoothscroll" href="#resume">{translate('navigation.section.resume')}</a></li>
                     <li><a className="smoothscroll" href="#tools">{translate('navigation.section.tools')}</a></li>
-                    <li><a className="smoothscroll" href="#testimonials">{translate('navigation.section.testimonials')}</a></li>
                     <li><a className="smoothscroll" href="#contact">{translate('navigation.section.contact')}</a></li>
                     <li><img id='language-flag' src={`/images/flags/${changeLanguageData.flag}`} alt={changeLanguageData.title}/><a href={changeLanguageData.url}>{changeLanguageData.title}</a></li>
                 </ul>

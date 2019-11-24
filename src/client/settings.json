@@ -115,15 +115,5 @@
       "url": "https://www.elastic.co/products/elasticsearch",
       "description": "NoSQL database"
     }
-  ],
-  "testimonials": [
-    {
-      "description":"This is a sample testimonial",
-      "name":"Some technical guy"
-    },
-    {
-      "description":"This is a sample testimonial",
-      "name":"Some other technical guy"
-    }
   ]
 }

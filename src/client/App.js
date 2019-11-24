@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { About, Activity, Contact, Footer, Header, Tools, Resume, Testimonials } from './components';
+import { About, Activity, Contact, Footer, Header, Tools, Resume } from './components';
 import settings from './settings';
 import { translate } from './services';
 
@@ -12,7 +12,6 @@ export default class App extends Component {
                 <Activity translate={translate}/>
                 <Resume settings={settings} translate={translate}/>
                 <Tools settings={settings}/>
-                <Testimonials settings={settings}/>
                 <Contact settings={settings} translate={translate}/>
                 <Footer settings={settings} translate={translate}/>
             </div>
