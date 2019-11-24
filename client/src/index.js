@@ -9,5 +9,9 @@ import '../public/js/jquery.flexslider';
 import '../public/js/magnific-popup';
 import '../public/js/waypoints';
 import '../public/js/init';
+import '../public/css/default.css';
+import '../public/css/layout.css';
+import '../public/css/media-queries.css';
+import '../public/css/magnific-popup.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
