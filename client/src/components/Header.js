@@ -4,16 +4,20 @@ import getLanguageCode from '../services/get-language-code';
 
 const getChangeLanguageData = () => {
     const languageCode = getLanguageCode();
+    const generateURL = newTopDomain => {
+        const currentURL = document.location.origin;
+        return currentURL.replace(/^(.*)(\.\w+)(\:\d+)?$/, `$1${newTopDomain}$3`);
+    }
     if (languageCode === 'en') {
         return {
             title: 'Svenska',
-            url: 'https://anton-johansson.se',
+            url: generateURL('.se'),
             flag: 'sweden.png'
         }
     } else {
         return {
             title: 'English',
-            url: 'https://anton-johansson.com',
+            url: generateURL('.com'),
             flag: 'united-kingdom.png'
         }
     }
