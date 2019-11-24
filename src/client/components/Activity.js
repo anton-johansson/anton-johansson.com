@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ky from 'ky';
+import ky from 'ky/umd';
 import apiEndpoint from './utils/api-endpoint';
 
 export default class Activity extends Component {
@@ -27,7 +27,6 @@ export default class Activity extends Component {
                 .then(async response => {
                     const {trackInfo, steamInfo} = await response.json();
                     this.setState({trackInfo, steamInfo});
-                    console.log('track info:', trackInfo);
                 });
 
             setTimeout(refreshTrackInfo, 30000);

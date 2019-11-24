@@ -3,6 +3,7 @@ const rateLimit = require('express-rate-limit');
 const parser = require('body-parser');
 const {sendContactMessage} = require('./contact');
 const {spotify, steam} = require('./activity');
+import renderer from './renderer';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -12,7 +13,9 @@ const rateLimiter = (minutes, numberOfRequests) => rateLimit({
     max: numberOfRequests
 });
 
-app.use(express.static('server/public'));
+app.use(express.static('public'));
+app.use(express.static('static'));
+
 app.use('/api/', parser.json());
 app.use('/api/', (_, response, next) => {
     response.setHeader('Access-Control-Allow-Origin', '*');
@@ -37,6 +40,11 @@ app.get('/api/activity', (_, response) => {
     const trackInfo = spotify.getTrackInfo();
     const steamInfo = steam.getSteamInfo();
     response.send({trackInfo, steamInfo});
+});
+
+app.get('/', (request, response) => {
+    const body = renderer()
+    response.send(body);
 });
 
 spotify.initiateJob();

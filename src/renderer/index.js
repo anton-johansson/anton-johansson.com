@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+export default () => {
+    return `<!DOCTYPE html>
 <html>
     <head>
         <title>Anton Johansson</title>
@@ -11,8 +12,10 @@
     </head>
     <body>
         <noscript>
-          You need to enable JavaScript to run this app.
+            You need to enable JavaScript to run this app.
         </noscript>
         <section id="root"></section>
+        <script src="/bundle.js"></script>
     </body>
-</html>
+</html>`
+};

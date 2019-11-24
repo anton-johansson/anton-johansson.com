@@ -17,7 +17,7 @@ let trackInfo = EMPTY;
 let accessToken = '';
 let expireDate = Date.now();
 
-const getTrackInfo = () => {
+export const getTrackInfo = () => {
     return trackInfo;
 }
 
@@ -69,16 +69,11 @@ const getTrackInfoFromSpotifyAPI = async () => {
     setTimeout(getTrackInfoFromSpotifyAPI, 60000);
 };
 
-const initiateJob = () => {
+export const initiateJob = () => {
     if (refreshToken && clientId && clientSecret) {
         console.log('Initializing Spotify job');
         getTrackInfoFromSpotifyAPI();
     } else {
         console.log('No Spotify credentials');
     }
-};
-
-module.exports = {
-    getTrackInfo,
-    initiateJob
 };

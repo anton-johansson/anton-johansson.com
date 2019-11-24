@@ -9,7 +9,7 @@ const steamApiKey = process.env.STEAM_API_KEY;
 
 let steamInfo = EMPTY;
 
-const getSteamInfo = () => {
+export const getSteamInfo = () => {
     return steamInfo;
 }
 
@@ -30,7 +30,7 @@ const getInfoFromSteamAPI = async () => {
     setTimeout(getInfoFromSteamAPI, 60000);
 };
 
-const initiateJob = () => {
+export const initiateJob = () => {
     if (steamApiKey) {
         console.log('Initializing Steam job');
         getInfoFromSteamAPI();
@@ -39,7 +39,3 @@ const initiateJob = () => {
     }
 };
 
-module.exports = {
-    getSteamInfo,
-    initiateJob
-};

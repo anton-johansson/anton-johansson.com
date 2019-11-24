@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ky from 'ky';
+import ky from 'ky/umd';
 import {getErrorCode, translate} from '../services';
 import apiEndpoint from './utils/api-endpoint';
 

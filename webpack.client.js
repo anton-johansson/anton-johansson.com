@@ -1,21 +1,24 @@
 const webpack = require('webpack');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
+    entry: './src/client/index.js',
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        '@babel/preset-react',
+                        ['@babel/env', { targets: { browsers: ['last 2 versions'] } }]
+                    ]
+                }
             },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.html$/,
-                use: ['html-loader']
             },
             {
                 test: /\.(svg|eot|woff|woff2|ttf|jpg|png)$/,
@@ -23,12 +26,10 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new HtmlWebPackPlugin({
-            template: './src/index.html',
-            filename: './index.html'
-        })
-    ],
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public')
+    },
     devServer: {
         contentBase: './public',
         port: 8000,
