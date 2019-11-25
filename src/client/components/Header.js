@@ -36,12 +36,12 @@ export default class Header extends Component {
                         <a className="mobile-btn" href="#nav-wrap" title={translate('navigation.show')}>{translate('navigation.show')}</a>
                         <a className="mobile-btn" href="#nav-hide" title={translate('navigation.hide')}>{translate('navigation.hide')}</a>
                         <ul id="nav" className="nav">
-                            <li className="current"><a className="smoothscroll" href="#home">{translate('navigation.section.home')}</a></li>
-                            <li><a className="smoothscroll" href="#about">{translate('navigation.section.about')}</a></li>
-                            <li><a className="smoothscroll" href="#activity">{translate('navigation.section.activity')}</a></li>
-                            <li><a className="smoothscroll" href="#resume">{translate('navigation.section.resume')}</a></li>
-                            <li><a className="smoothscroll" href="#tools">{translate('navigation.section.tools')}</a></li>
-                            <li><a className="smoothscroll" href="#contact">{translate('navigation.section.contact')}</a></li>
+                            <li><AnchorLink href="#home">{translate('navigation.section.home')}</AnchorLink></li>
+                            <li><AnchorLink href="#about">{translate('navigation.section.about')}</AnchorLink></li>
+                            <li><AnchorLink href="#activity">{translate('navigation.section.activity')}</AnchorLink></li>
+                            <li><AnchorLink href="#resume">{translate('navigation.section.resume')}</AnchorLink></li>
+                            <li><AnchorLink href="#tools">{translate('navigation.section.tools')}</AnchorLink></li>
+                            <li><AnchorLink href="#contact">{translate('navigation.section.contact')}</AnchorLink></li>
                             <li><img id='language-flag' src={`/images/flags/${changeLanguageData.flag}`} alt={changeLanguageData.title}/><a href={changeLanguageData.url}>{changeLanguageData.title}</a></li>
                         </ul>
                     </nav>
