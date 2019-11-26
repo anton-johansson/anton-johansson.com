@@ -119,8 +119,21 @@ header .scrolldown a:hover { color: #11ABB0; }
    position: fixed;
    left: 0;
    top: 0;
+   transition: opacity 0.3s;
 }
-.opaque { background-color: #333; }
+
+@media only screen and (min-width: 900px) {
+    .header-opaque {
+        background-color: #333;
+        opacity: 1;
+    }
+    .header-shown {
+        opacity: 1;
+    }
+    .header-hidden {
+        opacity: 0;
+    }
+}
 
 #language-flag {
    margin-bottom: -1px;
