@@ -55,7 +55,7 @@ export default class Header extends Component {
             <React.Fragment>
                 <SectionWaypoint sectionName="home" onScroll={onScroll}>
                     <span>
-                        <Waypoint onEnter={() => this.setState({beneathHeader: false})} onLeave={() => this.setState({beneathHeader: true})}>
+                        <Waypoint onEnter={() => this.setState({beneathHeader: false})} onLeave={() => this.setState({beneathHeader: true})} topOffset={1}>
                             <header id="home">
                                 <nav id="nav-wrap" className={navWrapperClass}>
                                     <a className="mobile-btn" href="#nav-wrap" title={translate('navigation.show')}>{translate('navigation.show')}</a>
