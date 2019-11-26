@@ -18,7 +18,6 @@ export default class App extends Component {
             const index = SECTIONS.indexOf(sectionName);
             newSectionName = SECTIONS[index + 1];
         }
-        console.log('new state', newSectionName);
         this.setState({currentSection: newSectionName});
     }
 
