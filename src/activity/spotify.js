@@ -21,7 +21,7 @@ export const getTrackInfo = () => {
     return trackInfo;
 }
 
-const getTrackInfoFromSpotifyAPI = async () => {
+const getAccessToken = async () => {
     if (!accessToken || Date.now() > expireDate) {
         console.log('Requesting new access token');
 
@@ -31,6 +31,7 @@ const getTrackInfoFromSpotifyAPI = async () => {
             client_id: clientId,
             client_secret: clientSecret
         };
+
         const response = await got.post('https://accounts.spotify.com/api/token', {
             form: true,
             body: form,
@@ -40,30 +41,37 @@ const getTrackInfoFromSpotifyAPI = async () => {
         accessToken = response.body.access_token;
         expireDate = Date.now() + (response.body.expires_in - 5) * 1000;
         console.log('Generated new access token', accessToken);
+        return accessToken;
     }
+};
 
-    const authorization = 'Bearer ' + accessToken;
-    const response = await got('https://api.spotify.com/v1/me/player/currently-playing', {
-        json: true,
-        headers: {
-            'Authorization': authorization
+const getTrackInfoFromSpotifyAPI = async () => {
+    try {
+        const token = await getAccessToken();
+        const authorization = 'Bearer ' + token;
+        const response = await got('https://api.spotify.com/v1/me/player/currently-playing', {
+            json: true,
+            headers: {
+                'Authorization': authorization
+            }
+        });
+
+        if (!response.body.is_playing) {
+            trackInfo = EMPTY;
+        } else {
+            const track = response.body.item;
+            const albumCover = track.album.images.find(image => image.width == 64) || {url: '/images/unknown-album.png'};
+            trackInfo = {
+                trackName: track.name,
+                trackURL: track.external_urls.spotify,
+                artistName: track.artists[0].name,
+                artistURL: track.artists[0].external_urls.spotify,
+                albumName: track.album.name,
+                albumArtworkURL: albumCover.url
+            };
         }
-    });
-
-    if (!response.body.is_playing) {
-        trackInfo = EMPTY;
-    } else {
-        const track = response.body.item;
-        const albumCover = track.album.images.find(image => image.width == 64) || {url: '/images/unknown-album.png'};
-        const info = {
-            trackName: track.name,
-            trackURL: track.external_urls.spotify,
-            artistName: track.artists[0].name,
-            artistURL: track.artists[0].external_urls.spotify,
-            albumName: track.album.name,
-            albumArtworkURL: albumCover.url
-        };
-        trackInfo = info;
+    } catch (error) {
+        console.log('Error occurred when fetching playing-status from Spotify:', error);
     }
 
     setTimeout(getTrackInfoFromSpotifyAPI, 60000);
