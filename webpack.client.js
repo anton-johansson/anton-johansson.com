@@ -18,23 +18,23 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ['isomorphic-style-loader', 'css-loader']
             },
             {
                 test: /\.(svg|eot|woff|woff2|ttf|jpg|png)$/,
-                use: ['file-loader']
-            }
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                        }
+                    }
+                ]
+            },
         ]
     },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public')
-    },
-    devServer: {
-        contentBase: './public',
-        port: 8000,
-        historyApiFallback: {
-            index: "/index.html",
-        },
     }
 };

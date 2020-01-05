@@ -13,7 +13,8 @@ const getInitialState = (hostname, currentURL) => ({
         currentURL: currentURL,
     }
 });
-const composeMiddlewares = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+//const composeMiddlewares = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeMiddlewares = compose;
 
 export default (hostname, currentURL, {enableLogger}) => {
     const middleware = enableLogger ? applyMiddleware(logger) : applyMiddleware();

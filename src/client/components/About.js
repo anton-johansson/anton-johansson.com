@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { connect } from 'react-redux';
 import SectionWaypoint from './utils/SectionWaypoint';
 import Translate from './utils/Translate';
@@ -17,6 +18,10 @@ const About = class extends Component {
         return (
             <SectionWaypoint sectionName="about" onScroll={onScroll}>
                 <section id="about">
+                    <Helmet>
+                        <title>Anton Johansson</title>
+                        <meta name="description" content={translate(languageCode, 'about.seo.meta', {age})}/>
+                    </Helmet>
                     <div className="row">
                         <div className="three columns">
                             <img className="profile-pic"  src="images/profile.jpg" alt="" />
