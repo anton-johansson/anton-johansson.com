@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import SectionWaypoint from './utils/SectionWaypoint';
+import { connect } from 'react-redux';
 import ky from 'ky/umd';
+import SectionWaypoint from './utils/SectionWaypoint';
 import {getErrorCode, translate} from '../services';
 import apiEndpoint from './utils/api-endpoint';
+import Translate from './utils/Translate';
 
-export default class Contact extends Component {
+const Contact = class extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,36 +39,46 @@ export default class Contact extends Component {
                 })
                 .catch(async error => {
                     const errorCode = await getErrorCode(error.response);
-                    const errorMessage = translate(errorCode);
+                    const errorMessage = translate(this.props.languageCode, errorCode);
                     console.log('Error when sending email:', errorCode);
                     this.setState({sending: false, success: false, okMessage: false, errorMessage});
                 });
     }
 
     render() {
-        const {translate, settings, onScroll} = this.props;
+        const {languageCode, settings, onScroll} = this.props;
         const {okMessage, errorMessage, mail} = this.state;
         return (
             <SectionWaypoint sectionName="contact" onScroll={onScroll}>
                 <section id="contact">
                     <div className="row">
                         <div className="twelve columns">
-                            <p className="lead">{translate('contact.form')}</p>
+                            <p className="lead">
+                                <Translate labelKey='contact.form'/>
+                            </p>
                         </div>
                     </div>
                     <div className="row">
                         <div className="twelve columns">
-                            <input type="text" name='name'placeholder={translate('contact.form.name')} value={mail.name} onChange={this.onChange}/>
-                            <input type="text" name='emailAddress' placeholder={translate('contact.form.email')} value={mail.emailAddress} onChange={this.onChange}/>
-                            <textarea name='message' placeholder={translate('contact.form.message')} value={mail.message} onChange={this.onChange}/>
-                            {okMessage && <h2 className="success">{translate('contact.form.success')}</h2>}
-                            {errorMessage && <h2 className="error">{errorMessage}</h2>}
-                            <input type="button" value={translate('contact.form.send')} onClick={this.onSend} disabled={okMessage}/>
+                            <input type="text" name='name' placeholder={translate(languageCode, 'contact.form.name')} value={mail.name} onChange={this.onChange}/>
+                            <input type="text" name='emailAddress' placeholder={translate(languageCode, 'contact.form.email')} value={mail.emailAddress} onChange={this.onChange}/>
+                            <textarea name='message' placeholder={translate(languageCode, 'contact.form.message')} value={mail.message} onChange={this.onChange}/>
+                            {okMessage &&
+                                <h2 className="success">
+                                    <Translate labelKey='contact.form.success'/>
+                                </h2>
+                            }
+                            {errorMessage &&
+                                <h2 className="error">{errorMessage}</h2>
+                            }
+                            <input type="button" value={translate(languageCode, 'contact.form.send')} onClick={this.onSend} disabled={okMessage}/>
                         </div>
                     </div>
                     <div className="row">
                         <div className="twelve columns">
-                            <p className="lead">{translate('contact.raw-email')}</p>
+                            <p className="lead">
+                                <Translate labelKey='contact.raw-email'/>
+                            </p>
                         </div>
                     </div>
                     <div className="row">
@@ -81,3 +93,9 @@ export default class Contact extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    languageCode: state.config.languageCode
+});
+
+export default connect(mapStateToProps)(Contact);

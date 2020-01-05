@@ -1,7 +1,6 @@
 import React from 'react';
 import english from '../translations/en';
 import swedish from '../translations/sv';
-import getLanguageCode from './get-language-code';
 
 const translations = {
   en: english,
@@ -16,8 +15,7 @@ const injectParams = (value, params) => {
     return output;
 };
 
-export default (labelKey, params = {}) => {
-    const languageCode = getLanguageCode();
+export default (languageCode, labelKey, params = {}) => {
     const translation = translations[languageCode][labelKey];
     if (translation === undefined) {
         return `%${labelKey}%`;

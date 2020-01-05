@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SectionWaypoint from './utils/SectionWaypoint';
 import ky from 'ky/umd';
 import apiEndpoint from './utils/api-endpoint';
+import Translate from './utils/Translate';
 
 export default class Activity extends Component {
     constructor(props) {
@@ -36,19 +37,29 @@ export default class Activity extends Component {
     }
 
     render() {
-        const {translate, onScroll} = this.props;
+        const {onScroll} = this.props;
         const {trackInfo, steamInfo} = this.state;
         return (
             <SectionWaypoint sectionName="activity" onScroll={onScroll}>
                 <section id="activity">
                     <div className="row">
                         <div className="three columns header-col">
-                            <h1><span>{translate('activity.title')}</span></h1>
+                            <h1>
+                                <span>
+                                    <Translate labelKey='activity.title'/>
+                                </span>
+                            </h1>
                         </div>
                         <div className="nine columns main-col">
-                            <h3>{translate('activity.spotify.currently-listening-to')}</h3>
+                            <h3>
+                                <Translate labelKey='activity.spotify.currently-listening-to'/>
+                            </h3>
                             <div className="spotify">
-                                {!trackInfo.trackName && <div>{translate('activity.spotify.not-playing')}</div>}
+                                {!trackInfo.trackName &&
+                                    <div>
+                                        <Translate labelKey='activity.spotify.not-playing'/>
+                                    </div>
+                                }
                                 {trackInfo.trackName &&
                                     <div>
                                         <div className="artwork">
@@ -63,9 +74,15 @@ export default class Activity extends Component {
                             </div>
                         </div>
                         <div className="nine columns main-col">
-                            <h3>{translate('activity.steam.currently-playing')}</h3>
+                            <h3>
+                                <Translate labelKey='activity.steam.currently-playing'/>
+                            </h3>
                             <div className="steam">
-                                {!steamInfo.gameTitle && <div>{translate('activity.steam.not-playing')}</div>}
+                                {!steamInfo.gameTitle &&
+                                    <div>
+                                        <Translate labelKey='activity.steam.not-playing'/>
+                                    </div>
+                                }
                                 {steamInfo.gameTitle &&
                                     <div>
                                         <div>

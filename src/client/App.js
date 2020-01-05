@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { About, Activity, Contact, Footer, Header, Tools, Resume } from './components';
 import settings from './settings';
-import { translate } from './services';
 
 const SECTIONS = ['home', 'about', 'activity', 'resume', 'tools', 'contact'];
 
@@ -24,13 +23,13 @@ export default class App extends Component {
     render() {
         return (
             <div className="App">
-                <Header settings={settings} translate={translate} onScroll={this.setCurrentSection} currentSection={this.state.currentSection}/>
-                <About settings={settings} translate={translate} onScroll={this.setCurrentSection} />
-                <Activity translate={translate} onScroll={this.setCurrentSection} />
-                <Resume settings={settings} translate={translate} onScroll={this.setCurrentSection} />
-                <Tools settings={settings} onScroll={this.setCurrentSection} />
-                <Contact settings={settings} translate={translate} onScroll={this.setCurrentSection} />
-                <Footer settings={settings} translate={translate}/>
+                <Header settings={settings} onScroll={this.setCurrentSection} currentSection={this.state.currentSection}/>
+                <About settings={settings} onScroll={this.setCurrentSection}/>
+                <Activity onScroll={this.setCurrentSection}/>
+                <Resume settings={settings} onScroll={this.setCurrentSection}/>
+                <Tools settings={settings} onScroll={this.setCurrentSection}/>
+                <Contact settings={settings} onScroll={this.setCurrentSection}/>
+                <Footer settings={settings}/>
             </div>
         );
     }

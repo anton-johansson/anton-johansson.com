@@ -1,17 +1,16 @@
 const topDomainToLanguageMappings = {
-  '.se': 'sv',
-  '.com': 'en'
+    '.se': 'sv',
+    '.com': 'en'
 };
 const getTopDomain = hostname => {
-  const lastDotIndex = hostname.lastIndexOf('.');
-  if (lastDotIndex >= 0) {
-    return hostname.substring(lastDotIndex);
-  }
-  return '';
+    const lastDotIndex = hostname.lastIndexOf('.');
+    if (lastDotIndex >= 0) {
+        return hostname.substring(lastDotIndex);
+    }
+    return '';
 };
 
-export default () => {
-  const hostname = document.location.hostname;
-  const topDomain = getTopDomain(hostname);
-  return topDomainToLanguageMappings[topDomain] || 'en';
+export default hostname => {
+    const topDomain = getTopDomain(hostname);
+    return topDomainToLanguageMappings[topDomain] || 'en';
 };

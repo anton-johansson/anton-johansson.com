@@ -1,5 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SectionWaypoint from './utils/SectionWaypoint';
+import Translate from './utils/Translate';
+import translate from '../services/translate';
 
 const age = (() => {
     const birthDate = Date.parse("1990-04-14")
@@ -7,9 +10,9 @@ const age = (() => {
     return Math.floor((now - birthDate) / (365 * 24 * 60 * 60 * 1000));
 })();
 
-export default class About extends Component {
+const About = class extends Component {
     render() {
-        const {translate, settings, onScroll} = this.props;
+        const {languageCode, settings, onScroll} = this.props;
         const {emailAddress} = settings;
         return (
             <SectionWaypoint sectionName="about" onScroll={onScroll}>
@@ -19,17 +22,25 @@ export default class About extends Component {
                             <img className="profile-pic"  src="images/profile.jpg" alt="" />
                         </div>
                         <div className="nine columns main-col">
-                            <h2>{translate('about.title')}</h2>
-                            {translate('about.description', {age})}
+                            <h2>
+                                <Translate labelKey='about.title'/>
+                            </h2>
+                            <Translate labelKey='about.description' params={{age}}/>
                             <div className="row">
                                 <div className="columns contact-details">
-                                    <h2>{translate('about.contact')}</h2>
+                                    <h2>
+                                        <Translate labelKey='about.contact'/>
+                                    </h2>
                                     <p className="address">
                                         <span>Anton Johansson</span>
                                         <br></br>
                                         <span>Borås, Sweden</span>
                                         <br></br>
-                                        <span><a href={translate('about.website')}>{translate('about.website')}</a></span>
+                                        <span>
+                                            <a href={translate(languageCode, 'about.website')}>
+                                                <Translate labelKey='about.website'/>
+                                            </a>
+                                        </span>
                                         <br></br>
                                         <span><a href={`mailto:${emailAddress}`}>{emailAddress}</a></span>
                                     </p>
@@ -42,3 +53,9 @@ export default class About extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    languageCode: state.config.languageCode
+});
+
+export default connect(mapStateToProps)(About);

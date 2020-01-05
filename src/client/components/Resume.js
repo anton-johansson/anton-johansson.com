@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
 import SectionWaypoint from './utils/SectionWaypoint';
+import Translate from './utils/Translate';
 
 export default class Resume extends Component {
     render() {
-        const {settings, translate, onScroll} = this.props;
+        const {settings, onScroll} = this.props;
         return (
             <SectionWaypoint sectionName="resume" onScroll={onScroll}>
                 <section id="resume">
                     <div className="row education">
                         <div className="three columns header-col">
-                            <h1><span>{translate('resume.education.title')}</span></h1>
+                            <h1>
+                                <span>
+                                    <Translate labelKey='resume.education.title'/>
+                                </span>
+                            </h1>
                         </div>
                         <div className="nine columns main-col">
                         {
@@ -17,13 +22,18 @@ export default class Resume extends Component {
                                 return (
                                     <div key={item.educationKey} className="row item">
                                         <div className="twelve columns">
-                                            <h3>{translate(`education.${item.educationKey}.name`)}</h3>
+                                            <h3>
+                                                <Translate labelKey={`education.${item.educationKey}.name`}/>
+                                            </h3>
                                             <p className="info">
-                                                {translate(`education.${item.educationKey}.specialization`)}
-                                                <span>&bull;</span> <em className="date">{translate(`month.${item.monthOfPassing}`)} {item.yearOfPassing}</em>
+                                                <Translate labelKey={`education.${item.educationKey}.specialization`}/>
+                                                <span>&bull;</span>
+                                                <em className="date">
+                                                    <Translate labelKey={`month.${item.monthOfPassing}`}/> {item.yearOfPassing}
+                                                </em>
                                             </p>
                                             <p>
-                                                {translate(`education.${item.educationKey}.description`)}
+                                                <Translate labelKey={`education.${item.educationKey}.description`}/>
                                             </p>
                                         </div>
                                     </div>
@@ -34,7 +44,11 @@ export default class Resume extends Component {
                     </div>
                     <div className="row work">
                         <div className="three columns header-col">
-                            <h1><span>{translate('resume.work.title')}</span></h1>
+                            <h1>
+                                <span>
+                                    <Translate labelKey='resume.work.title'/>
+                                </span>
+                            </h1>
                         </div>
                         <div className="nine columns main-col">
                         {
@@ -42,15 +56,18 @@ export default class Resume extends Component {
                                 return (
                                     <div key={item.workKey} className="row item">
                                         <div className="twelve columns">
-                                            <h3>{translate(`work.${item.workKey}.name`)}</h3>
+                                            <h3>
+                                                <Translate labelKey={`work.${item.workKey}.name`}/>
+                                            </h3>
                                             <p className="info">
-                                                {translate(`work.${item.workKey}.title`)}
+                                                <Translate labelKey={`work.${item.workKey}.title`}/>
                                                 <span>&bull;</span>
-                                                <em className="date">{translate(`month.${item.monthOfStart}`)} {item.yearOfStart} -{item.present && <span>{translate('present')}</span>}
+                                                <em className="date">
+                                                    <Translate labelKey={`month.${item.monthOfStart}`}/> {item.yearOfStart} -{item.present && <span><Translate labelKey='present'/></span>}
                                                 </em>
                                             </p>
                                             <p>
-                                                {translate(`work.${item.workKey}.description`)}
+                                                <Translate labelKey={`work.${item.workKey}.description`}/>
                                             </p>
                                         </div>
                                     </div>
@@ -61,7 +78,11 @@ export default class Resume extends Component {
                     </div>
                     <div className="row skill">
                         <div className="three columns header-col">
-                            <h1><span>{translate('resume.skills.title')}</span></h1>
+                            <h1>
+                                <span>
+                                    <Translate labelKey='resume.skills.title'/>
+                                </span>
+                            </h1>
                         </div>
                         <div className="nine columns main-col">
                             <div className="bars">

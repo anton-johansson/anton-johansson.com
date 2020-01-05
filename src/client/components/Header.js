@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ReactFitText from 'react-fittext';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import SectionWaypoint from './utils/SectionWaypoint';
 import renderSocialLinks from './utils/render-social-links';
-import getLanguageCode from '../services/get-language-code';
 import { Waypoint } from 'react-waypoint';
+import Translate from './utils/Translate';
 
-const getChangeLanguageData = () => {
-    const languageCode = getLanguageCode();
+const getChangeLanguageData = languageCode => {
     const generateURL = newTopDomain => {
         const currentURL = document.location.origin;
         return currentURL.replace(/^(.*)(\.\w+)(\:\d+)?$/, `$1${newTopDomain}$3`);
@@ -37,7 +37,7 @@ const getNavClass = state => {
     }
 };
 
-export default class Header extends Component {
+const Header = class extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,8 +47,8 @@ export default class Header extends Component {
     }
 
     render() {
-        const {settings, translate, onScroll, currentSection} = this.props;
-        const changeLanguageData = getChangeLanguageData();
+        const {languageCode, settings, onScroll, currentSection} = this.props;
+        const changeLanguageData = getChangeLanguageData(languageCode);
         const navWrapperClass = getNavClass(this.state);
 
         return (
@@ -58,15 +58,19 @@ export default class Header extends Component {
                         <Waypoint onEnter={() => this.setState({beneathHeader: false})} onLeave={() => this.setState({beneathHeader: true})} topOffset={1}>
                             <header id="home">
                                 <nav id="nav-wrap" className={navWrapperClass}>
-                                    <a className="mobile-btn" href="#nav-wrap" title={translate('navigation.show')}>{translate('navigation.show')}</a>
-                                    <a className="mobile-btn" href="#nav-hide" title={translate('navigation.hide')}>{translate('navigation.hide')}</a>
+                                    <a className="mobile-btn" href="#nav-wrap">
+                                        <Translate labelKey='navigation.show'/>
+                                    </a>
+                                    <a className="mobile-btn" href="#nav-hide">
+                                        <Translate labelKey='navigation.hide'/>
+                                    </a>
                                     <ul id="nav" className="nav">
-                                        <li className={currentSection === 'home' ? 'current' : ''}><AnchorLink href="#home">{translate('navigation.section.home')}</AnchorLink></li>
-                                        <li className={currentSection === 'about' ? 'current' : ''}><AnchorLink href="#about">{translate('navigation.section.about')}</AnchorLink></li>
-                                        <li className={currentSection === 'activity' ? 'current' : ''}><AnchorLink href="#activity">{translate('navigation.section.activity')}</AnchorLink></li>
-                                        <li className={currentSection === 'resume' ? 'current' : ''}><AnchorLink href="#resume">{translate('navigation.section.resume')}</AnchorLink></li>
-                                        <li className={currentSection === 'tools' ? 'current' : ''}><AnchorLink href="#tools">{translate('navigation.section.tools')}</AnchorLink></li>
-                                        <li className={currentSection === 'contact' ? 'current' : ''}><AnchorLink href="#contact">{translate('navigation.section.contact')}</AnchorLink></li>
+                                        <li className={currentSection === 'home' ? 'current' : ''}><AnchorLink href="#home"><Translate labelKey='navigation.section.home'/></AnchorLink></li>
+                                        <li className={currentSection === 'about' ? 'current' : ''}><AnchorLink href="#about"><Translate labelKey='navigation.section.about'/></AnchorLink></li>
+                                        <li className={currentSection === 'activity' ? 'current' : ''}><AnchorLink href="#activity"><Translate labelKey='navigation.section.activity'/></AnchorLink></li>
+                                        <li className={currentSection === 'resume' ? 'current' : ''}><AnchorLink href="#resume"><Translate labelKey='navigation.section.resume'/></AnchorLink></li>
+                                        <li className={currentSection === 'tools' ? 'current' : ''}><AnchorLink href="#tools"><Translate labelKey='navigation.section.tools'/></AnchorLink></li>
+                                        <li className={currentSection === 'contact' ? 'current' : ''}><AnchorLink href="#contact"><Translate labelKey='navigation.section.contact'/></AnchorLink></li>
                                         <li><img id='language-flag' src={`/images/flags/${changeLanguageData.flag}`} alt={changeLanguageData.title}/><a href={changeLanguageData.url}>{changeLanguageData.title}</a></li>
                                     </ul>
                                 </nav>
@@ -75,10 +79,12 @@ export default class Header extends Component {
                                     <div className="banner-text">
                                         <ReactFitText minFontSize={40} maxFontSize={90}>
                                             <h1>
-                                                {translate('home.title')}
+                                                <Translate labelKey='home.title'/>
                                             </h1>
                                         </ReactFitText>
-                                        <h3 style={{color:'#fff', fontFamily:'sans-serif'}}>{translate('home.description')}</h3>
+                                        <h3 style={{color:'#fff', fontFamily:'sans-serif'}}>
+                                            <Translate labelKey='home.description'/>
+                                        </h3>
                                         <hr/>
                                         <ul className="social">
                                             {renderSocialLinks(settings)}
@@ -98,3 +104,9 @@ export default class Header extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    languageCode: state.config.languageCode
+});
+
+export default connect(mapStateToProps)(Header);
