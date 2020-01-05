@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import withStyles from 'isomorphic-style-loader/withStyles';
+import { Helmet } from 'react-helmet-async';
 import { About, Activity, Contact, Footer, Header, Tools, Resume } from './components';
 import settings from './settings';
 
+import cssDefault from './public/css/default.css';
+import cssLayout from './public/css/layout.css';
+import cssMediaQueries from './public/css/media-queries.css';
+import cssPopup from './public/css/magnific-popup.css';
+
 const SECTIONS = ['home', 'about', 'activity', 'resume', 'tools', 'contact'];
 
-export default class App extends Component {
+class App extends Component {
     constructor(props) {
         super(props);
         this.state = {currentSection: SECTIONS[0]};
@@ -23,6 +30,13 @@ export default class App extends Component {
     render() {
         return (
             <div className="App">
+                <Helmet>
+                    <meta charset="utf-8"/>
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                    <link rel="shortcut icon" href="/favicon.png"/>
+                    <link rel="manifest" href="/manifest.json"/>
+                </Helmet>
                 <Header settings={settings} onScroll={this.setCurrentSection} currentSection={this.state.currentSection}/>
                 <About settings={settings} onScroll={this.setCurrentSection}/>
                 <Activity onScroll={this.setCurrentSection}/>
@@ -34,3 +48,5 @@ export default class App extends Component {
         );
     }
 }
+
+export default withStyles(cssDefault, cssLayout, cssMediaQueries, cssPopup)(App);

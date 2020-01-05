@@ -14,6 +14,7 @@
     "Jag är ${age} år gammal och bor i Borås, Sverige. Jag jobbar för tillfället på ett företag som heter Viskan System AB, där vi utvecklar, underhåller och tillhandahåller en E-handelsplatform och ett tillhörande back-office system. Huvudsakligen så arbetar jag med att utveckla systemet men jag tenderar ofta att dra mig åt \"DevOps\"-hållet och jobbar mycket med att bygga CI-pipelines and containerisering av applikationer.",
     "Utöver programmering så gillar jag även att spela datorspel. Just nu är det mest Rocket League som gäller där jag spelar i en liga som heter Svenak Raketligan. Skicka ett meddelande på Steam!"
   ],
+  "about.seo.meta": "En ${age} år gammal utvecklare från Borås, Sverige.",
   "about.contact": "Kontaktuppgifter",
   "about.website": "https://anton-johansson.se",
   "activity.title": "Aktivitet",

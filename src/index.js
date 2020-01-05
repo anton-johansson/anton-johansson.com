@@ -43,7 +43,7 @@ app.get('/api/activity', (_, response) => {
 });
 
 app.get('/', (request, response) => {
-    const body = renderer()
+    const body = renderer(request);
     response.send(body);
 });
 
