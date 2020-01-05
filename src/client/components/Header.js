@@ -7,9 +7,8 @@ import renderSocialLinks from './utils/render-social-links';
 import { Waypoint } from 'react-waypoint';
 import Translate from './utils/Translate';
 
-const getChangeLanguageData = languageCode => {
+const getChangeLanguageData = (languageCode, currentURL) => {
     const generateURL = newTopDomain => {
-        const currentURL = document.location.origin;
         return currentURL.replace(/^(.*)(\.\w+)(\:\d+)?$/, `$1${newTopDomain}$3`);
     }
     if (languageCode === 'en') {
@@ -47,8 +46,8 @@ const Header = class extends Component {
     }
 
     render() {
-        const {languageCode, settings, onScroll, currentSection} = this.props;
-        const changeLanguageData = getChangeLanguageData(languageCode);
+        const {languageCode, currentURL, settings, onScroll, currentSection} = this.props;
+        const changeLanguageData = getChangeLanguageData(languageCode, currentURL);
         const navWrapperClass = getNavClass(this.state);
 
         return (
@@ -106,7 +105,8 @@ const Header = class extends Component {
 }
 
 const mapStateToProps = state => ({
-    languageCode: state.config.languageCode
+    languageCode: state.config.languageCode,
+    currentURL: state.config.currentURL,
 });
 
 export default connect(mapStateToProps)(Header);

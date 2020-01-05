@@ -9,7 +9,7 @@ import './public/css/layout.css';
 import './public/css/media-queries.css';
 import './public/css/magnific-popup.css';
 
-const store = createStore(window.location.hostname, {enableLogger: true});
+const store = createStore(window.location.hostname, window.location.href, {enableLogger: true});
 
 const jsx = (
     <ReduxProvider store={store}>

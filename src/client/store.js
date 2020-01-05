@@ -7,14 +7,15 @@ const reducer = combineReducers({
     test1: (state = {}) => state,
 });
 
-const getInitialState = hostname => ({
+const getInitialState = (hostname, currentURL) => ({
     config: {
         languageCode: getLanguageCode(hostname),
+        currentURL: currentURL,
     }
 });
 const composeMiddlewares = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default (hostname, {enableLogger}) => {
+export default (hostname, currentURL, {enableLogger}) => {
     const middleware = enableLogger ? applyMiddleware(logger) : applyMiddleware();
-    return createStore(reducer, getInitialState(hostname), composeMiddlewares(middleware));
+    return createStore(reducer, getInitialState(hostname, currentURL), composeMiddlewares(middleware));
 }
