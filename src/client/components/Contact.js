@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import ky from 'ky/umd';
 import SectionWaypoint from './utils/SectionWaypoint';
 import {getErrorCode, translate} from '../services';
-import apiEndpoint from './utils/api-endpoint';
 import Translate from './utils/Translate';
 
 const Contact = class extends Component {
@@ -32,7 +31,7 @@ const Contact = class extends Component {
 
     onSend() {
         this.setState({sending: true});
-        ky.post(`${apiEndpoint}/api/send-contact-message`, {json: this.state.mail})
+        ky.post(`/api/send-contact-message`, {json: this.state.mail})
                 .then(response => {
                     console.log(response);
                     this.setState({sending: false, success: true, okMessage: true, errorMessage: '', mail: {name: '', emailAddress: '', message: ''}});

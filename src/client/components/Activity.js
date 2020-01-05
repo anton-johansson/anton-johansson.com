@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import SectionWaypoint from './utils/SectionWaypoint';
 import ky from 'ky/umd';
-import apiEndpoint from './utils/api-endpoint';
 import Translate from './utils/Translate';
 
 export default class Activity extends Component {
@@ -25,7 +24,7 @@ export default class Activity extends Component {
 
     componentDidMount() {
         const refreshTrackInfo = () => {
-            ky.get(`${apiEndpoint}/api/activity`)
+            ky.get(`/api/activity`)
                 .then(async response => {
                     const {trackInfo, steamInfo} = await response.json();
                     this.setState({trackInfo, steamInfo});
