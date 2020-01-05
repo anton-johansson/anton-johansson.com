@@ -8,8 +8,9 @@ import { Waypoint } from 'react-waypoint';
 import Translate from './utils/Translate';
 
 const getChangeLanguageData = (languageCode, currentURL) => {
+    console.log(currentURL);
     const generateURL = newTopDomain => {
-        return currentURL.replace(/^(.*)(\.\w+)(\:\d+)?$/, `$1${newTopDomain}$3`);
+        return currentURL.replace(/^(.*)(\.\w+)(\:\d+)?(.*)$/, `$1${newTopDomain}$3`);
     }
     if (languageCode === 'en') {
         return {
