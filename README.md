@@ -11,8 +11,6 @@ My personal webpage, hosted here:
 
 ```shell
 $ npm install
-$ cd client && npm install
-$ cd ..
 $ npm run dev
 ```
 
