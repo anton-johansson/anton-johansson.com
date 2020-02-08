@@ -20,8 +20,8 @@ const About = class extends Component {
             <SectionWaypoint sectionName="about" onScroll={onScroll}>
                 <section id="about">
                     <Helmet>
-                        <title>Anton Johansson</title>
-                        <meta name="description" content={translate(languageCode, 'about.seo.meta', {age})}/>
+                        <title>{translate(languageCode, 'seo.title')}</title>
+                        <meta name="description" content={translate(languageCode, 'seo.description', {age})}/>
                     </Helmet>
                     <div className="row">
                         <div className="three columns">

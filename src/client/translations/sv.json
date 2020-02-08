@@ -1,4 +1,6 @@
 {
+  "seo.title": "Anton Johansson - Programmere & DevOps ingengör baserad i Borås",
+  "seo.description": "Anton är en ${age} år gammal utvecklare baseard i Borås. Jobbar mycket med Java, men utforskar även andra språk och platformar så som Golang och NodeJS.",
   "navigation.show": "Visa navigation",
   "navigation.hide": "Dölj navigation",
   "navigation.section.home": "Hem",
@@ -14,7 +16,6 @@
     "Jag är ${age} år gammal och bor i Borås, Sverige. Jag jobbar för tillfället på ett företag som heter Viskan System AB, där vi utvecklar, underhåller och tillhandahåller en E-handelsplatform och ett tillhörande back-office system. Huvudsakligen så arbetar jag med att utveckla systemet men jag tenderar ofta att dra mig åt \"DevOps\"-hållet och jobbar mycket med att bygga CI-pipelines and containerisering av applikationer.",
     "Utöver programmering så gillar jag även att spela datorspel. Just nu är det mest Rocket League som gäller där jag spelar i en liga som heter Svenak Raketligan. Skicka ett meddelande på Steam!"
   ],
-  "about.seo.meta": "En ${age} år gammal utvecklare från Borås, Sverige.",
   "about.contact": "Kontaktuppgifter",
   "about.website": "https://anton-johansson.se",
   "activity.title": "Aktivitet",
