@@ -25,7 +25,7 @@ const About = class extends Component {
                     </Helmet>
                     <div className="row">
                         <div className="three columns">
-                            <img className="profile-pic" src={profileImage} alt="" />
+                            <img className="profile-pic" src={profileImage} alt="Anton Johansson" />
                         </div>
                         <div className="nine columns main-col">
                             <h2>
