@@ -43,11 +43,11 @@ export default class Activity extends Component {
                 <section id="activity">
                     <div className="row">
                         <div className="three columns header-col">
-                            <h1>
+                            <h2>
                                 <span>
                                     <Translate labelKey='activity.title'/>
                                 </span>
-                            </h1>
+                            </h2>
                         </div>
                         <div className="nine columns main-col">
                             <h3>

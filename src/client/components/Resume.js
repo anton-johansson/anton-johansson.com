@@ -10,11 +10,11 @@ export default class Resume extends Component {
                 <section id="resume">
                     <div className="row education">
                         <div className="three columns header-col">
-                            <h1>
+                            <h2>
                                 <span>
                                     <Translate labelKey='resume.education.title'/>
                                 </span>
-                            </h1>
+                            </h2>
                         </div>
                         <div className="nine columns main-col">
                         {
@@ -44,11 +44,11 @@ export default class Resume extends Component {
                     </div>
                     <div className="row work">
                         <div className="three columns header-col">
-                            <h1>
+                            <h2>
                                 <span>
                                     <Translate labelKey='resume.work.title'/>
                                 </span>
-                            </h1>
+                            </h2>
                         </div>
                         <div className="nine columns main-col">
                         {
@@ -78,11 +78,11 @@ export default class Resume extends Component {
                     </div>
                     <div className="row skill">
                         <div className="three columns header-col">
-                            <h1>
+                            <h2>
                                 <span>
                                     <Translate labelKey='resume.skills.title'/>
                                 </span>
-                            </h1>
+                            </h2>
                         </div>
                         <div className="nine columns main-col">
                             <div className="bars">
