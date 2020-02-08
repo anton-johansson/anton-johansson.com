@@ -65,55 +65,5 @@
     {
       "name": "Continuous integration"
     }
-  ],
-  "tools": [
-    {
-      "name": "java",
-      "title": "Java",
-      "url": "https://www.java.com",
-      "description": "Programming language"
-    },
-    {
-      "name": "docker",
-      "title": "Docker",
-      "url": "https://www.docker.com",
-      "description": "Containerisation engine"
-    },
-    {
-      "name": "git",
-      "title": "Git",
-      "url": "https://git-scm.com",
-      "description": "Version control system"
-    },
-    {
-      "name": "linux",
-      "title": "Linux",
-      "url": "https://www.linux.org",
-      "description": "Operating system"
-    },
-    {
-      "name": "eclipse",
-      "title": "Eclipse IDE",
-      "url": "https://www.eclipse.org",
-      "description": "Integrated development environment"
-    },
-    {
-      "name": "jenkins",
-      "title": "Jenkins CI",
-      "url": "https://jenkins.io",
-      "description": "Continuous integration"
-    },
-    {
-      "name": "nginx",
-      "title": "NGINX",
-      "url": "https://www.nginx.com",
-      "description": "Load balancer and reverse proxy"
-    },
-    {
-      "name": "elasticsearch",
-      "title": "Elasticsearch",
-      "url": "https://www.elastic.co/products/elasticsearch",
-      "description": "NoSQL database"
-    }
   ]
 }

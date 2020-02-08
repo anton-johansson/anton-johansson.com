@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import SectionWaypoint from './utils/SectionWaypoint';
 import Translate from './utils/Translate';
 import translate from '../services/translate';
+import profileImage from '../public/images/profile.jpg';
 
 const age = (() => {
     const birthDate = Date.parse("1990-04-14")
@@ -24,7 +25,7 @@ const About = class extends Component {
                     </Helmet>
                     <div className="row">
                         <div className="three columns">
-                            <img className="profile-pic"  src="images/profile.jpg" alt="" />
+                            <img className="profile-pic" src={profileImage} alt="" />
                         </div>
                         <div className="nine columns main-col">
                             <h2>

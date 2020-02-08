@@ -9,6 +9,8 @@ import cssLayout from './public/css/layout.css';
 import cssMediaQueries from './public/css/media-queries.css';
 import cssPopup from './public/css/magnific-popup.css';
 
+import favicon from './public/favicon.png';
+
 const SECTIONS = ['home', 'about', 'activity', 'resume', 'tools', 'contact'];
 
 class App extends Component {
@@ -34,8 +36,7 @@ class App extends Component {
                     <meta charset="utf-8"/>
                     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                    <link rel="shortcut icon" href="/favicon.png"/>
-                    <link rel="manifest" href="/manifest.json"/>
+                    <link rel="shortcut icon" href={favicon}/>
                 </Helmet>
                 <Header settings={settings} onScroll={this.setCurrentSection} currentSection={this.state.currentSection}/>
                 <About settings={settings} onScroll={this.setCurrentSection}/>

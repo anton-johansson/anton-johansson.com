@@ -27,6 +27,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
+                            outputPath: 'public/',
                         }
                     }
                 ]
@@ -34,7 +35,7 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'public')
+        filename: 'public/bundle.js',
+        path: path.resolve(__dirname, 'build')
     }
 };

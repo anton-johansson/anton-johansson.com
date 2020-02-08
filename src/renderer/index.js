@@ -52,7 +52,7 @@ export default request => {
         <script>
             window.REDUX_DATA = ${JSON.stringify(reduxState)}
         </script>
-        <script src="/bundle.js"></script>
+        <script src="/public/bundle.js"></script>
     </body>
 </html>`
 };

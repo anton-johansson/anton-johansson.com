@@ -6,6 +6,8 @@ import SectionWaypoint from './utils/SectionWaypoint';
 import renderSocialLinks from './utils/render-social-links';
 import { Waypoint } from 'react-waypoint';
 import Translate from './utils/Translate';
+import flagSE from '../public/images/flags/sweden.png';
+import flagUK from '../public/images/flags/united-kingdom.png';
 
 const getChangeLanguageData = (languageCode, currentURL) => {
     const generateURL = newTopDomain => {
@@ -15,13 +17,13 @@ const getChangeLanguageData = (languageCode, currentURL) => {
         return {
             title: 'Svenska',
             url: generateURL('.se'),
-            flag: 'sweden.png'
+            flag: flagSE,
         }
     } else {
         return {
             title: 'English',
             url: generateURL('.com'),
-            flag: 'united-kingdom.png'
+            flag: flagUK,
         }
     }
 };
@@ -70,7 +72,7 @@ const Header = class extends Component {
                                         <li className={currentSection === 'resume' ? 'current' : ''}><AnchorLink href="#resume"><Translate labelKey='navigation.section.resume'/></AnchorLink></li>
                                         <li className={currentSection === 'tools' ? 'current' : ''}><AnchorLink href="#tools"><Translate labelKey='navigation.section.tools'/></AnchorLink></li>
                                         <li className={currentSection === 'contact' ? 'current' : ''}><AnchorLink href="#contact"><Translate labelKey='navigation.section.contact'/></AnchorLink></li>
-                                        <li><img id='language-flag' src={`/images/flags/${changeLanguageData.flag}`} alt={changeLanguageData.title}/><a href={changeLanguageData.url}>{changeLanguageData.title}</a></li>
+                                        <li><img id='language-flag' src={changeLanguageData.flag} alt={changeLanguageData.title}/><a href={changeLanguageData.url}>{changeLanguageData.title}</a></li>
                                     </ul>
                                 </nav>
                                 <div className="row banner">

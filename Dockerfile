@@ -10,9 +10,7 @@ RUN npm install --only prod
 
 FROM node:10.15.1-slim
 EXPOSE 4000
-COPY --from=build /usr/src/app/build /opt/app/build
-COPY --from=build /usr/src/app/public /opt/app/public
-COPY --from=build /usr/src/app/static /opt/app/static
+COPY --from=build /usr/src/app/build /opt/app
 COPY --from=dependencies /usr/src/app/node_modules /opt/app/node_modules
 WORKDIR /opt/app
-CMD ["node", "build/bundle.js"]
+CMD ["node", "bundle.js"]

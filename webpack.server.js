@@ -38,7 +38,7 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'build/bundle.js',
-        path: path.resolve(__dirname),
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'build'),
     }
 };

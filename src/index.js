@@ -13,16 +13,8 @@ const rateLimiter = (minutes, numberOfRequests) => rateLimit({
     max: numberOfRequests
 });
 
-app.use(express.static('public'));
-app.use(express.static('static'));
-
+app.use('/public/', express.static('public'));
 app.use('/api/', parser.json());
-app.use('/api/', (_, response, next) => {
-    response.setHeader('Access-Control-Allow-Origin', '*');
-    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    response.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
 
 app.post('/api/send-contact-message', rateLimiter(10, 2), (request, response) => {
     const {name, emailAddress, message} = request.body;
