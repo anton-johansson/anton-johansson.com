@@ -28,6 +28,10 @@ const About = class extends Component {
                         <meta property="og:description" content={translate(languageCode, 'seo.description', {age})}/>
                         <meta property="og:site_name" content="Anton Johansson"/>
                         <meta property="og:url" content={currentURL}/>
+                        <meta property="twitter:card" content="summary"/>
+                        <meta property="twitter:image" content={profileImage}/>
+                        <meta property="twitter:title" content={translate(languageCode, 'seo.title')}/>
+                        <meta property="twitter:description" content={translate(languageCode, 'seo.description', {age})}/>
                     </Helmet>
                     <div className="row">
                         <div className="three columns">
