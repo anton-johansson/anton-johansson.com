@@ -14,7 +14,7 @@ const rateLimiter = (minutes, numberOfRequests) => rateLimit({
     max: numberOfRequests
 });
 
-
+app.disable('x-powered-by');
 app.use('/public/', express.static('public'));
 app.use('/api/', parser.json());
 
