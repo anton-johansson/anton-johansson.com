@@ -4,6 +4,7 @@ const parser = require('body-parser');
 const {sendContactMessage} = require('./contact');
 const {spotify, steam} = require('./activity');
 import renderer from './renderer';
+import { getRequestEndpoint, START_DATE } from './utils';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -13,8 +14,23 @@ const rateLimiter = (minutes, numberOfRequests) => rateLimit({
     max: numberOfRequests
 });
 
+
 app.use('/public/', express.static('public'));
 app.use('/api/', parser.json());
+
+app.get('/robots.txt', (request, response) => {
+    response.send(`Sitemap: ${getRequestEndpoint(request)}/sitemap.xml`);
+});
+app.get('/sitemap.xml', (request, response) => {
+    response.type('text/xml');
+    response.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>${getRequestEndpoint(request)}/</loc>
+        <lastmod>${START_DATE}</lastmod>
+    </url>
+</urlset>`);
+});
 
 app.post('/api/send-contact-message', rateLimiter(10, 2), (request, response) => {
     const {name, emailAddress, message} = request.body;
