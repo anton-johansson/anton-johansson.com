@@ -4,7 +4,7 @@ const parser = require('body-parser');
 const {sendContactMessage} = require('./contact');
 const {spotify, steam} = require('./activity');
 import renderer from './renderer';
-import { getRequestEndpoint, START_DATE } from './utils';
+import { getRequestURL, START_DATE } from './utils';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -19,14 +19,14 @@ app.use('/public/', express.static('public'));
 app.use('/api/', parser.json());
 
 app.get('/robots.txt', (request, response) => {
-    response.send(`Sitemap: ${getRequestEndpoint(request)}/sitemap.xml`);
+    response.send(`Sitemap: ${getRequestURL(request, {appendPath: false})}/sitemap.xml`);
 });
 app.get('/sitemap.xml', (request, response) => {
     response.type('text/xml');
     response.send(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>${getRequestEndpoint(request)}/</loc>
+        <loc>${getRequestURL(request, {appendPath: false})}/</loc>
         <lastmod>${START_DATE}</lastmod>
     </url>
 </urlset>`);

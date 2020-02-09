@@ -14,7 +14,7 @@ const age = (() => {
 
 const About = class extends Component {
     render() {
-        const {languageCode, settings, onScroll} = this.props;
+        const {languageCode, settings, onScroll, currentURL} = this.props;
         const {emailAddress} = settings;
         return (
             <SectionWaypoint sectionName="about" onScroll={onScroll}>
@@ -22,6 +22,12 @@ const About = class extends Component {
                     <Helmet>
                         <title>{translate(languageCode, 'seo.title')}</title>
                         <meta name="description" content={translate(languageCode, 'seo.description', {age})}/>
+                        <meta property="og:type" content="website"/>
+                        <meta property="og:image" content={profileImage}/>
+                        <meta property="og:title" content={translate(languageCode, 'seo.title')}/>
+                        <meta property="og:description" content={translate(languageCode, 'seo.description', {age})}/>
+                        <meta property="og:site_name" content="Anton Johansson"/>
+                        <meta property="og:url" content={currentURL}/>
                     </Helmet>
                     <div className="row">
                         <div className="three columns">
@@ -61,7 +67,8 @@ const About = class extends Component {
 }
 
 const mapStateToProps = state => ({
-    languageCode: state.config.languageCode
+    languageCode: state.config.languageCode,
+    currentURL: state.config.currentURL,
 });
 
 export default connect(mapStateToProps)(About);

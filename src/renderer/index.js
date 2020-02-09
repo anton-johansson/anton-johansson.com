@@ -3,20 +3,12 @@ import ReactDOM from "react-dom/server";
 import { Provider as ReduxProvider } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
 import StyleContext from 'isomorphic-style-loader/StyleContext'
-import url from 'url';
 import createStore from '../client/store';
 import App from '../client/App';
-
-const getFullURL = request => {
-    return url.format({
-        protocol: request.protocol,
-        host: request.get('host'),
-        pathname: request.originalUrl,
-    });
-}
+import { getRequestURL } from '../utils';
 
 export default request => {
-    const currentURL = getFullURL(request);
+    const currentURL = getRequestURL(request);
     const store = createStore(request.hostname, currentURL, {enableLogger: false});
     const css = new Set();
     const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()));
