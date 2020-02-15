@@ -189,6 +189,16 @@
       border: none;
    }  
 
+   ul#nav a.nav-language {
+       display: flex;
+   }
+
+   ul#nav a.nav-language img {
+       align-self: center;
+       margin-top: -1px;
+       padding-left: 5px;
+   }
+
 
    /* Header Styles
    -------------------------------------------------------------------- */

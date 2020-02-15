@@ -72,7 +72,7 @@ const Header = class extends Component {
                                         <li className={currentSection === 'resume' ? 'current' : ''}><AnchorLink href="#resume"><Translate labelKey='navigation.section.resume'/></AnchorLink></li>
                                         <li className={currentSection === 'tools' ? 'current' : ''}><AnchorLink href="#tools"><Translate labelKey='navigation.section.tools'/></AnchorLink></li>
                                         <li className={currentSection === 'contact' ? 'current' : ''}><AnchorLink href="#contact"><Translate labelKey='navigation.section.contact'/></AnchorLink></li>
-                                        <li><img id='language-flag' src={changeLanguageData.flag} alt={changeLanguageData.title}/><a href={changeLanguageData.url}>{changeLanguageData.title}</a></li>
+                                        <li><a className="nav-language" href={changeLanguageData.url}>{changeLanguageData.title} <img id='language-flag' src={changeLanguageData.flag} alt={changeLanguageData.title}/></a></li>
                                     </ul>
                                 </nav>
                                 <div className="row banner">
