@@ -6,6 +6,7 @@ import StyleContext from 'isomorphic-style-loader/StyleContext'
 import createStore from '../client/store';
 import App from '../client/App';
 import { getRequestURL } from '../utils';
+import { minify } from 'html-minifier';
 
 export default request => {
     const currentURL = getRequestURL(request);
@@ -28,7 +29,7 @@ export default request => {
     const reduxState = store.getState();
     const helmet = helmetContext.helmet;
 
-    return `<!DOCTYPE html>
+    const html = `<!DOCTYPE html>
 <html ${helmet.htmlAttributes.toString()}>
     <head>
         ${helmet.title.toString()}
@@ -47,4 +48,11 @@ export default request => {
         <script src="/public/bundle.js"></script>
     </body>
 </html>`
+
+    return minify(html, {
+        removeAttributeQuotes: true,
+        minifyCSS: true,
+        removeComments: true,
+        collapseWhitespace: true,
+    });
 };
