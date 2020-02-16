@@ -1,7 +1,9 @@
 FROM node:10.15.1-slim AS build
-COPY . /usr/src/app
 WORKDIR /usr/src/app
-RUN npm install && npm run build
+COPY package.json package-lock.json /usr/src/app/
+RUN npm install
+COPY . /usr/src/app
+RUN npm run build
 
 FROM node:10.15.1-slim AS dependencies
 COPY package.json /usr/src/app/package.json
