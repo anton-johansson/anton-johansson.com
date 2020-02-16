@@ -9,7 +9,7 @@ export default class Resume extends Component {
             <SectionWaypoint sectionName="resume" onScroll={onScroll}>
                 <section id="resume">
                     <div className="row education">
-                        <div className="three columns header-col">
+                        <div className="columns header-col">
                             <h2>
                                 <span>
                                     <Translate labelKey='resume.education.title'/>
@@ -43,7 +43,7 @@ export default class Resume extends Component {
                         </div>
                     </div>
                     <div className="row work">
-                        <div className="three columns header-col">
+                        <div className="columns header-col">
                             <h2>
                                 <span>
                                     <Translate labelKey='resume.work.title'/>
@@ -77,7 +77,7 @@ export default class Resume extends Component {
                         </div> 
                     </div>
                     <div className="row skill">
-                        <div className="three columns header-col">
+                        <div className="columns header-col">
                             <h2>
                                 <span>
                                     <Translate labelKey='resume.skills.title'/>

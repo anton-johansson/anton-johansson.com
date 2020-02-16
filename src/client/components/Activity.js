@@ -42,7 +42,7 @@ export default class Activity extends Component {
             <SectionWaypoint sectionName="activity" onScroll={onScroll}>
                 <section id="activity">
                     <div className="row">
-                        <div className="three columns header-col">
+                        <div className="columns header-col">
                             <h2>
                                 <span>
                                     <Translate labelKey='activity.title'/>
@@ -50,48 +50,50 @@ export default class Activity extends Component {
                             </h2>
                         </div>
                         <div className="nine columns main-col">
-                            <h3>
-                                <Translate labelKey='activity.spotify.currently-listening-to'/>
-                            </h3>
-                            <div className="spotify">
-                                {!trackInfo.trackName &&
-                                    <div>
-                                        <Translate labelKey='activity.spotify.not-playing'/>
-                                    </div>
-                                }
-                                {trackInfo.trackName &&
-                                    <div>
-                                        <div className="artwork">
-                                            <img src={trackInfo.albumArtworkURL} alt={trackInfo.albumName}/>
+                            <div className="row item">
+                                <h3>
+                                    <Translate labelKey='activity.spotify.currently-listening-to'/>
+                                </h3>
+                                <div className="spotify">
+                                    {!trackInfo.trackName &&
+                                        <div>
+                                            <Translate labelKey='activity.spotify.not-playing'/>
                                         </div>
-                                        <div className="info">
-                                            <div className="spotify trackName"><a href={trackInfo.trackURL}>{trackInfo.trackName}</a></div>
-                                            <div className="spotify artistName"><a href={trackInfo.artistURL}>{trackInfo.artistName}</a></div>
+                                    }
+                                    {trackInfo.trackName &&
+                                        <div>
+                                            <div className="artwork">
+                                                <img src={trackInfo.albumArtworkURL} alt={trackInfo.albumName}/>
+                                            </div>
+                                            <div className="info">
+                                                <div className="spotify trackName"><a href={trackInfo.trackURL}>{trackInfo.trackName}</a></div>
+                                                <div className="spotify artistName"><a href={trackInfo.artistURL}>{trackInfo.artistName}</a></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                }
+                                    }
+                                </div>
                             </div>
-                        </div>
-                        <div className="nine columns main-col">
-                            <h3>
-                                <Translate labelKey='activity.steam.currently-playing'/>
-                            </h3>
-                            <div className="steam">
-                                {!steamInfo.gameTitle &&
-                                    <div>
-                                        <Translate labelKey='activity.steam.not-playing'/>
-                                    </div>
-                                }
-                                {steamInfo.gameTitle &&
-                                    <div>
+                            <div className="row item">
+                                <h3>
+                                    <Translate labelKey='activity.steam.currently-playing'/>
+                                </h3>
+                                <div className="steam">
+                                    {!steamInfo.gameTitle &&
                                         <div>
-                                            <div className="steam gameTitle">{steamInfo.gameTitle}</div>
+                                            <Translate labelKey='activity.steam.not-playing'/>
                                         </div>
+                                    }
+                                    {steamInfo.gameTitle &&
                                         <div>
-                                            <img className="artwork" src={steamInfo.artworkURL} alt={steamInfo.gameTitle}/>
+                                            <div>
+                                                <div className="steam gameTitle">{steamInfo.gameTitle}</div>
+                                            </div>
+                                            <div>
+                                                <img className="artwork" src={steamInfo.artworkURL} alt={steamInfo.gameTitle}/>
+                                            </div>
                                         </div>
-                                    </div>
-                                }
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>

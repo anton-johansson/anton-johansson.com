@@ -691,7 +691,6 @@ input[type="checkbox"] { display: inline; }
 .bgrid-thirds [class*="column"]   { width: 33.33333%; }
 .bgrid-halves [class*="column"]   { width: 50%; }
 
-[class*="bgrid"] [class*="column"] + [class*="column"]:last-child { float: left; }
 
 /* Left clearing for block grid columns - columns that changes width in
 different screen sizes. Allows columns with different heights to align
@@ -705,10 +704,10 @@ properly.
 @media only screen and (max-width: 900px) {
 
    /* block grids on small screens */
-   .s-bgrid-sixths [class*="column"]   { width: 16.66667%; }
-   .s-bgrid-quarters [class*="column"] { width: 25%; }
-   .s-bgrid-thirds [class*="column"]   { width: 33.33333%; }
-   .s-bgrid-halves [class*="column"]   { width: 50%; }
+   .p-bgrid-sixths [class*="column"]   { width: 16.66667%; }
+   .p-bgrid-quarters [class*="column"] { width: 25%; }
+   .p-bgrid-thirds [class*="column"]   { width: 33.33333%; }
+   .p-bgrid-halves [class*="column"]   { width: 50%; }
 
    /* block grids left clearing */
    .first { clear: none; }
@@ -720,13 +719,19 @@ properly.
 --------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
 
+    /* block grids on small screens */
+    .s-bgrid-sixths [class*="column"]   { width: 16.66667%; }
+    .s-bgrid-quarters [class*="column"] { width: 25%; }
+    .s-bgrid-thirds [class*="column"]   { width: 33.33333%; }
+    .s-bgrid-halves [class*="column"]   { width: 50%; }
+
    .row {
 	   width: 460px;
 	   margin: 0 auto;
       padding: 0;
 	}
    .column, .columns {
-	   width: auto !important;
+	   width: auto;
 	   float: none;
 	   margin-left: 0;
 	   margin-right: 0;
@@ -734,8 +739,10 @@ properly.
    }
    .row .row { width: auto; max-width: none; margin: 0 -30px; }
 
-   [class*="column"] + [class*="column"]:last-child { float: none; }
-   [class*="bgrid"] [class*="column"] + [class*="column"]:last-child { float: none; }
+    [class*="column"] + [class*="column"]:last-child {
+        float: none;
+        width: auto;
+    }
 
    /* Offsets */
    .row .offset-1    { margin-left: 0%; }
