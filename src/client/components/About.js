@@ -23,11 +23,11 @@ const About = class extends Component {
                         <title>{translate(languageCode, 'seo.title')}</title>
                         <meta name="description" content={translate(languageCode, 'seo.description', {age})}/>
                         <meta property="og:type" content="website"/>
-                        <meta property="og:image" content={profileImage}/>
+                        <meta property="og:image" content={`${currentURL}${profileImage}`}/>
                         <meta property="og:title" content={translate(languageCode, 'seo.title')}/>
                         <meta property="og:description" content={translate(languageCode, 'seo.description', {age})}/>
                         <meta property="og:site_name" content="Anton Johansson"/>
-                        <meta property="og:url" content={`${currentURL}${profileImage}`}/>
+                        <meta property="og:url" content={currentURL}/>
                         <meta property="twitter:card" content="summary"/>
                         <meta property="twitter:image" content={`${currentURL}${profileImage}`}/>
                         <meta property="twitter:title" content={translate(languageCode, 'seo.title')}/>
