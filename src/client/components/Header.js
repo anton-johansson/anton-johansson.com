@@ -68,10 +68,10 @@ const Header = class extends Component {
                         <Waypoint onEnter={() => this.setState({beneathHeader: false})} onLeave={() => this.setState({beneathHeader: true})} topOffset={1}>
                             <header id="home">
                                 <nav id="nav-wrap" className={navWrapperClass}>
-                                    <a className="mobile-btn" href="#nav-wrap">
+                                    <a className="mobile-btn" href="#nav-wrap" title={translate(languageCode, 'navigation.show')}>
                                         <Translate labelKey='navigation.show'/>
                                     </a>
-                                    <a className="mobile-btn" href="#nav-hide">
+                                    <a className="mobile-btn" href="#nav-hide" title={translate(languageCode, 'navigation.hide')}>
                                         <Translate labelKey='navigation.hide'/>
                                     </a>
                                     <ul id="nav" className="nav">

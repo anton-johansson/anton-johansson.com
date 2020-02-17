@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import renderSocialLinks from './utils/render-social-links';
+import translate from '../services/translate';
 
-export default class Footer extends Component {
+const Footer = class extends Component {
     render() {
-        const {settings} = this.props;
+        const {languageCode, settings} = this.props;
         return (
             <footer>
                 <div className="row">
@@ -14,7 +16,7 @@ export default class Footer extends Component {
                         </ul>
                     </div>
                     <div id="go-top">
-                        <AnchorLink href="#home">
+                        <AnchorLink href="#home" title={translate(languageCode, 'navigation.section.home')}>
                             <i className="icon-up-open"/>
                         </AnchorLink>
                     </div>
@@ -23,3 +25,9 @@ export default class Footer extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    languageCode: state.config.languageCode,
+});
+
+export default connect(mapStateToProps)(Footer);
