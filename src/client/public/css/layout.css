@@ -285,7 +285,7 @@ ul#nav li.current a { color: #F06000; }
     font-size: 20px;
     color: #FFFFFF;
 }
-#activity .row .item {
+#activity .activity-item {
     margin-bottom: 30px;
 }
 
