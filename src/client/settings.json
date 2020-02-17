@@ -2,32 +2,32 @@
   "emailAddress": "hello@anton-johansson.com",
   "socialLinks": [
     {
-      "name": "linkedin",
+      "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/anton-johansson/",
       "className": "fa fa-linkedin"
     },
     {
-      "name": "github",
+      "name": "Github",
       "url": "https://github.com/anton-johansson",
       "className": "fa fa-github"
     },
     {
-      "name": "skype",
+      "name": "Twitter",
       "url": "https://twitter.com/_antonjohansson",
       "className": "fa fa-twitter"
     },
     {
-      "name": "instagram",
+      "name": "Instagram",
       "url": "https://www.instagram.com/anton.johansson/",
       "className": "fa fa-instagram"
     },
     {
-      "name": "steam",
+      "name": "Steam",
       "url": "https://steamcommunity.com/id/antonjohansson_",
       "className": "fa fa-steam"
     },
     {
-      "name": "spotify",
+      "name": "Spotify",
       "url": "https://open.spotify.com/user/antoon",
       "className": "fa fa-spotify"
     }

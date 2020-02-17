@@ -8,6 +8,7 @@ import { Waypoint } from 'react-waypoint';
 import Translate from './utils/Translate';
 import flagSE from '../public/images/flags/sweden.png';
 import flagUK from '../public/images/flags/united-kingdom.png';
+import { translate } from '../services';
 
 const getChangeLanguageData = (languageCode, currentURL) => {
     const generateURL = newTopDomain => {
@@ -38,6 +39,14 @@ const getNavClass = state => {
     }
 };
 
+const NavigationItem = ({name, languageCode, currentSection}) => (
+    <li className={currentSection === name ? 'current' : ''}>
+        <AnchorLink href={`#${name}`} title={translate(languageCode, `navigation.section.${name}`)}>
+            <Translate labelKey={`navigation.section.${name}`}/>
+        </AnchorLink>
+    </li>
+);
+
 const Header = class extends Component {
     constructor(props) {
         super(props);
@@ -66,13 +75,13 @@ const Header = class extends Component {
                                         <Translate labelKey='navigation.hide'/>
                                     </a>
                                     <ul id="nav" className="nav">
-                                        <li className={currentSection === 'home' ? 'current' : ''}><AnchorLink href="#home"><Translate labelKey='navigation.section.home'/></AnchorLink></li>
-                                        <li className={currentSection === 'about' ? 'current' : ''}><AnchorLink href="#about"><Translate labelKey='navigation.section.about'/></AnchorLink></li>
-                                        <li className={currentSection === 'activity' ? 'current' : ''}><AnchorLink href="#activity"><Translate labelKey='navigation.section.activity'/></AnchorLink></li>
-                                        <li className={currentSection === 'resume' ? 'current' : ''}><AnchorLink href="#resume"><Translate labelKey='navigation.section.resume'/></AnchorLink></li>
-                                        <li className={currentSection === 'tools' ? 'current' : ''}><AnchorLink href="#tools"><Translate labelKey='navigation.section.tools'/></AnchorLink></li>
-                                        <li className={currentSection === 'contact' ? 'current' : ''}><AnchorLink href="#contact"><Translate labelKey='navigation.section.contact'/></AnchorLink></li>
-                                        <li><a className="nav-language" href={changeLanguageData.url}>{changeLanguageData.title} <img id='language-flag' src={changeLanguageData.flag} alt={changeLanguageData.title}/></a></li>
+                                        <NavigationItem name="home" languageCode={languageCode} currentSection={currentSection}/>
+                                        <NavigationItem name="about" languageCode={languageCode} currentSection={currentSection}/>
+                                        <NavigationItem name="activity" languageCode={languageCode} currentSection={currentSection}/>
+                                        <NavigationItem name="resume" languageCode={languageCode} currentSection={currentSection}/>
+                                        <NavigationItem name="tools" languageCode={languageCode} currentSection={currentSection}/>
+                                        <NavigationItem name="contact" languageCode={languageCode} currentSection={currentSection}/>
+                                        <li><a className="nav-language" href={changeLanguageData.url} title={changeLanguageData.title}>{changeLanguageData.title} <img id='language-flag' src={changeLanguageData.flag} alt={changeLanguageData.title}/></a></li>
                                     </ul>
                                 </nav>
                                 <div className="row banner">
@@ -93,7 +102,7 @@ const Header = class extends Component {
                                     </div>
                                 </div>
                                 <p className="scrolldown">
-                                    <AnchorLink href="#about">
+                                    <AnchorLink href="#about" title={translate(languageCode, 'navigation.section.about')}>
                                         <i className="icon-down-circle"></i>
                                     </AnchorLink>
                                 </p>

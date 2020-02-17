@@ -13,7 +13,7 @@ import toolElasticsearch from '../public/images/tools/elasticsearch.svg';
 const Tool = ({name, title, description, targetURL, imageURL}) => (
     <div key={name} className="columns tools-item">
         <div className="item-wrap">
-            <a href={targetURL}>
+            <a href={targetURL} title={title}>
                 <img src={imageURL} alt={title} className="item-img tool-img"/>
                 <div className="overlay">
                     <div className="tools-item-meta">

@@ -53,12 +53,12 @@ const About = class extends Component {
                                         <span>Borås, Sweden</span>
                                         <br></br>
                                         <span>
-                                            <a href={translate(languageCode, 'about.website')}>
+                                            <a href={translate(languageCode, 'about.website')} title='Anton Johansson'>
                                                 <Translate labelKey='about.website'/>
                                             </a>
                                         </span>
                                         <br></br>
-                                        <span><a href={`mailto:${emailAddress}`}>{emailAddress}</a></span>
+                                        <span><a href={`mailto:${emailAddress}`} title='Anton Johansson'>{emailAddress}</a></span>
                                     </p>
                                 </div>
                             </div>
