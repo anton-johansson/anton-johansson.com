@@ -19,6 +19,7 @@ app.use('/public/', express.static('public'));
 app.use('/api/', parser.json());
 
 app.get('/robots.txt', (request, response) => {
+    console.log(getRequestURL(request, {appendPath: false}));
     response.send(`Sitemap: ${getRequestURL(request, {appendPath: false})}/sitemap.xml`);
 });
 app.get('/sitemap.xml', (request, response) => {
