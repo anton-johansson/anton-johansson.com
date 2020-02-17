@@ -8,6 +8,7 @@ import { getRequestURL, START_DATE } from './utils';
 
 const app = express();
 const port = process.env.PORT || 4000;
+const disableCrawling = 'disabled' === process.env.CRAWLING;
 
 const rateLimiter = (minutes, numberOfRequests) => rateLimit({
     windowMs: 1000 * 60 * minutes,
@@ -19,8 +20,12 @@ app.use('/public/', express.static('public'));
 app.use('/api/', parser.json());
 
 app.get('/robots.txt', (request, response) => {
-    console.log(getRequestURL(request, {appendPath: false}));
-    response.send(`Sitemap: ${getRequestURL(request, {appendPath: false})}/sitemap.xml`);
+    if (disableCrawling) {
+        response.send(`User-agent: *
+Disallow: /`);
+    } else {
+        response.send(`Sitemap: ${getRequestURL(request, {appendPath: false})}/sitemap.xml`);
+    }
 });
 app.get('/sitemap.xml', (request, response) => {
     response.type('text/xml');
