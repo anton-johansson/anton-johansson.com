@@ -56,7 +56,7 @@ export interface Stat {
 
 export interface Skill {
   readonly title: string;
-  readonly description: string;
+  readonly description: string[];
 }
 
 /**

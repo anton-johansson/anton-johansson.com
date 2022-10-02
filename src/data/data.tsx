@@ -103,31 +103,53 @@ export const aboutData: About = {
 export const skills: Skill[] = [
   {
     title: 'System architecture',
-    description: 'TODO',
+    description: [
+      'The bigger picture - in a technical perspective - is something that has always caught my interest. How do applications work together, how do they communicate? What type of database is most suited for a specific use case and how do we make sure that data reaches its destination in the most efficient way?',
+    ],
   },
   {
-    title: 'Development',
-    description: 'TODO',
+    title: 'Programming',
+    description: [
+      'Programming has always been very important to me. Mainly focusing on backend development, I\'ve spent most of my time programming in Java. But I\'ve also been doing backend development in Node.js and also played around a lot with Golang, which is very interesting.',
+      'I strive to keep my code clean, easy to understand and easy to test, following practices such as dependency injection and test driven development.',
+      'Frontend development has never been my strong suit, but lately I\'ve been working a lot with React, which has made me appreciate frontend development a lot more.',
+    ],
   },
   {
     title: 'Database modelling',
-    description: 'TODO',
-  },
-  {
-    title: 'Continuous integration & delivery',
-    description: 'TODO',
+    description: [
+      'Properly modelling your database is a fundamental part of software development. It requires you to take a step back and think about how resources within the system behaves and interacts with one another.',
+      'Finding the balance between database integrity and performance can sometimes be challenging in larger databases, which makes it all the more interesting!',
+    ],
   },
   {
     title: 'Containerisation & cloud native',
-    description: 'TODO',
+    description: [
+      'Cloud native development is one of my favorite topics. I was an early adopter of Docker and when container orchestration started growing, I was quick to jump into it.',
+      'I\'ve looked into both Docker Swarm and Kubernetes, and while Docker Swarm is a lot easier to get started with, I feel Kubernetes is superior. The community is great and it feels like the the possibilities are endless.',
+      'I have experience in both the operational parts of Kubernetes (installing and maintaining bare-metal Kubernetes clusters) and the client aspect of Kubernetes (utilizing clusters and deploying applications). However, I prefer the client aspect, converting and building applications to properly run in a Kubernetes environment.',
+    ],
+  },
+  {
+    title: 'Continuous integration & delivery',
+    description: [
+      'Making sure that your code base is automatically tested, automatically checked for code style issues and is automatically deployed is something that I enjoy working with. There is not much that compares to the the feeling of watching a well planned build pipeline succeed.',
+      'I have worked mostly with Jenkins (former Hudson) and GitLab CI, and specially connecting them with container orcehstration platforms such as Kubernetes, having developers feature branches deployed automatically.',
+    ],
   },
   {
     title: 'API design & development',
-    description: 'TODO',
+    description: [
+      'During my years in this business, I\'ve been working a lot with API\'s, both on the consuming end and the providing end. I have been writing integrations with 3rd parties more times than I can count and it has given me a good insight when it comes to providing a good, well-structured API.',
+      'When providing an API, I believe that it is very important to have a well defined and documented API that is easy to understand and where naming conventions are consistent throughout the API.',
+    ],
   },
   {
     title: 'Security',
-    description: 'TODO',
+    description: [
+      'Cyber security has always been an important area, but it has been blowing up a lot the last few years. I find it a very interesting topic, and I enjoy keeping up with the latest news.',
+      'I have worked with multiple tools related to finding vulnerabilities in your code and I also enjoy messing around with security related platforms, such as Try Hack Me and Secure Code Warrior.',
+    ],
   },
 ];
 

@@ -8,7 +8,7 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   return (
     <div className="pb-8 last:pb-0">
       <h2 className="text-xl font-bold">{title}</h2>
-      {description}
+      {description.map((text, index) => <p className="pb-4 last:pb-0" key={`${text}-${index}`}>{text}</p>)}
     </div>
   );
 });
