@@ -124,8 +124,10 @@ const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
       )}>
       <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
       <blockquote className="flex flex-col gap-y-4">
-        {texts.map(text => (
-          <p className="prose prose-sm italic text-white md:prose-lg">{text}</p>
+        {texts.map((text, index) => (
+          <p className="prose prose-sm italic text-white md:prose-lg" key={`${text}-${index}`}>
+            {text}
+          </p>
         ))}
         <div className="text-xs text-sm text-white">&mdash; {name}</div>
       </blockquote>
