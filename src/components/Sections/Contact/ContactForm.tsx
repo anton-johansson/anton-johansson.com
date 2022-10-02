@@ -12,16 +12,16 @@ interface Feedback {
 }
 
 const ContactForm: FC = memo(() => {
-  const [data, setData] = useState(
-    useMemo<FormData>(
-      () => ({
-        name: '',
-        email: '',
-        message: '',
-      }),
-      [],
-    ),
+  const defaultData = useMemo<FormData>(
+    () => ({
+      name: '',
+      email: '',
+      message: '',
+    }),
+    [],
   );
+
+  const [data, setData] = useState(defaultData);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isSending, setSending] = useState(false);
 
@@ -50,16 +50,19 @@ const ContactForm: FC = memo(() => {
         body: JSON.stringify(data),
       });
 
+      const success = response.status === 200;
+
       setSending(false);
       setFeedback({
-        message:
-          response.status === 200
-            ? 'Message sent!'
-            : 'Could not send message. Try to use another means of communication.',
-        success: response.status === 200,
+        message: success ? 'Message sent!' : 'Could not send message. Try to use another means of communication.',
+        success,
       });
+
+      if (success) {
+        setData(defaultData);
+      }
     },
-    [data, setSending, setFeedback],
+    [data, setData, defaultData, setSending, setFeedback],
   );
 
   const closeFeedback = useCallback(() => setFeedback(null), [setFeedback]);
@@ -78,6 +81,7 @@ const ContactForm: FC = memo(() => {
           placeholder="Name"
           required
           type="text"
+          value={data.name}
         />
         <input
           autoComplete="email"
@@ -88,6 +92,7 @@ const ContactForm: FC = memo(() => {
           placeholder="Email"
           required
           type="email"
+          value={data.email}
         />
         <textarea
           className={inputClasses}
@@ -99,6 +104,7 @@ const ContactForm: FC = memo(() => {
           required
           rows={6}
           style={{resize: 'none'}}
+          value={data.message}
         />
 
         {!feedback && (
