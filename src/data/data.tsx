@@ -12,9 +12,9 @@ import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import SpotifyIcon from '../components/Icon/SpotifyIcon';
 import SteamIcon from '../components/Icon/SteamIcon';
-import homeBackground from '../images/header-background.webp';
+import homeBackground from '../images/header.webp';
 import profile from '../images/profile.jpg';
-import testimonialsBackground from '../images/testimonials-background.webp';
+import recommendationsBackground from '../images/recommendations.webp';
 import {
   About,
   ContactSection,
@@ -22,9 +22,9 @@ import {
   Home,
   HomepageMeta,
   PortfolioItem,
+  RecommendationSection,
   Skill,
   Social,
-  TestimonialSection,
   TimelineItem,
 } from './dataDef';
 
@@ -44,7 +44,7 @@ export const SectionId = {
   About: 'about',
   Resume: 'resume',
   Portfolio: 'portfolio', // Currently not used
-  Testimonials: 'testimonials',
+  Recommendations: 'recommendations',
   Contact: 'contact',
 } as const;
 
@@ -110,9 +110,9 @@ export const skills: Skill[] = [
   {
     title: 'Programming',
     description: [
-      'Programming has always been very important to me. Mainly focusing on backend development, I\'ve spent most of my time programming in Java. But I\'ve also been doing backend development in Node.js and also played around a lot with Golang, which is very interesting.',
+      "Programming has always been very important to me. Mainly focusing on backend development, I've spent most of my time programming in Java. But I've also been doing backend development in Node.js and also played around a lot with Golang, which is very interesting.",
       'I strive to keep my code clean, easy to understand and easy to test, following practices such as dependency injection and test driven development.',
-      'Frontend development has never been my strong suit, but lately I\'ve been working a lot with React, which has made me appreciate frontend development a lot more.',
+      "Frontend development has never been my strong suit, but lately I've been working a lot with React, which has made me appreciate frontend development a lot more.",
     ],
   },
   {
@@ -126,7 +126,7 @@ export const skills: Skill[] = [
     title: 'Containerisation & cloud native',
     description: [
       'Cloud native development is one of my favorite topics. I was an early adopter of Docker and when container orchestration started growing, I was quick to jump into it.',
-      'I\'ve looked into both Docker Swarm and Kubernetes, and while Docker Swarm is a lot easier to get started with, I feel Kubernetes is superior. The community is great and it feels like the the possibilities are endless.',
+      "I've looked into both Docker Swarm and Kubernetes, and while Docker Swarm is a lot easier to get started with, I feel Kubernetes is superior. The community is great and it feels like the the possibilities are endless.",
       'I have experience in both the operational parts of Kubernetes (installing and maintaining bare-metal Kubernetes clusters) and the client aspect of Kubernetes (utilizing clusters and deploying applications). However, I prefer the client aspect, converting and building applications to properly run in a Kubernetes environment.',
     ],
   },
@@ -140,7 +140,7 @@ export const skills: Skill[] = [
   {
     title: 'API design & development',
     description: [
-      'During my years in this business, I\'ve been working a lot with API\'s, both on the consuming end and the providing end. I have been writing integrations with 3rd parties more times than I can count and it has given me a good insight when it comes to providing a good, well-structured API.',
+      "During my years in this business, I've been working a lot with API's, both on the consuming end and the providing end. I have been writing integrations with 3rd parties more times than I can count and it has given me a good insight when it comes to providing a good, well-structured API.",
       'When providing an API, I believe that it is very important to have a well defined and documented API that is easy to understand and where naming conventions are consistent throughout the API.',
     ],
   },
@@ -201,11 +201,11 @@ export const experience: TimelineItem[] = [
 ];
 
 /**
- * Testimonial section
+ * Recommendation section
  */
-export const testimonial: TestimonialSection = {
-  backgroundImage: testimonialsBackground,
-  testimonials: [
+export const recommendation: RecommendationSection = {
+  backgroundImage: recommendationsBackground,
+  recommendations: [
     {
       name: 'Linus Brimstedt - former CTO at Viskan System AB',
       texts: [
