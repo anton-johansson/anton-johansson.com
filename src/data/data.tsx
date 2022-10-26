@@ -175,7 +175,7 @@ export const education: TimelineItem[] = [
     location: 'University of Borås',
     title: 'System architect',
     content: [
-      'A three-year lasting bachelor degree that was very well balanced around theory and practical excersices, learning different kinds of programming languages, technices and also different project management styles. I knew must of the practical things at this time, but it was educational to just practice it with other people and discuss with like-minded people.',
+      'A three-year lasting bachelor degree that was very well balanced around theory and practical excersices, learning different kinds of programming languages, technices and also different project management styles. I knew most of the practical things at this time, but it was educational to just practice it with other people and discuss with like-minded people.',
     ],
   },
 ];
