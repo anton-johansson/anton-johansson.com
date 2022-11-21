@@ -60,9 +60,9 @@ export const homeData: Home = {
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a <strong className="text-stone-100">software developer</strong> and a{' '}
-        <strong className="text-stone-100">DevOps engineer</strong> based in Sweden, currently working at{' '}
-        <strong className="text-stone-100">Viskan System AB</strong> helping build a modern e-commerce platform and
-        ecosystem.
+        <strong className="text-stone-100">DevOps engineer</strong> based in Borås, Sweden. I am currently positioned as{' '}
+        <strong className="text-stone-100">CTO</strong> at <strong className="text-stone-100">Viskan System AB</strong>,{' '}
+        helping build a modern e-commerce platform and ecosystem.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I spend most of my free time <strong className="text-stone-100">gaming</strong>,{' '}
@@ -182,7 +182,7 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'June 2012 - present',
+    date: 'June 2012 - September 2022',
     location: 'Viskan System AB',
     title: 'System developer',
     content: [
@@ -191,11 +191,19 @@ export const experience: TimelineItem[] = [
     ],
   },
   {
-    date: 'September 2016 - present',
+    date: 'September 2016 - September 2022',
     location: 'Viskan System AB',
     title: 'Partner & integration',
     content: [
       'With this role, I got responsibility over our integrations with third parties and the technical communication with them. This was mainly focused on our third party payment service providers, building a solid framework for processing payments through our E-commerce platform and further down the flows in the back-office system, handling order cancellations, invoice activations and returns.',
+    ],
+  },
+  {
+    date: 'November 2022 - present',
+    location: 'Viskan System AB',
+    title: 'Chief technology officer',
+    content: [
+      'Having worked more with long term architecture, vision and system design for quite some time, this role better formalise what I do at Viskan. I work closely with the development manager, assisting with recruitment, building an internal technology community at Viskan and generally make sure that we are on the right track regarding technology.',
     ],
   },
 ];
