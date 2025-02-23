@@ -70,8 +70,8 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
           <Bars3Icon className="h-8 w-8 text-white" />
           <span className="sr-only">Open sidebar</span>
         </button>
-        <Dialog as="div" open={isOpen} className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
-          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+        <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen} open={isOpen}>
+          <div aria-hidden="true" className="fixed inset-0 bg-black/30" />
           <div className="relative w-4/5 bg-stone-800">
             <nav className="mt-5 flex flex-col gap-y-2 px-2">
               {navSections.map(section => (
