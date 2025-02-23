@@ -57,10 +57,10 @@ export const homeData: Home = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a <strong className="text-stone-100">software developer</strong> and a{' '}
-        <strong className="text-stone-100">DevOps engineer</strong> based in Sweden, currently working at{' '}
-        <strong className="text-stone-100">Viskan System AB</strong> helping build a modern e-commerce platform and
-        ecosystem.
+        I'm a <strong className="text-stone-100">software developer</strong>, a <strong>software architect</strong>{' '}
+        and a <strong className="text-stone-100">DevOps engineer</strong> based in Sweden, currently positioned as the{' '}
+        <strong className="text-stone-100">Chief Technology Officer</strong> at <strong className="text-stone-100">Viskan System AB</strong>{' '}
+        helping build a modern e-commerce platform and ecosystem.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I spend most of my free time <strong className="text-stone-100">gaming</strong>,{' '}
@@ -168,14 +168,23 @@ export const education: TimelineItem[] = [
     location: 'John Bauer gymnasium',
     title: 'Information technology',
     content: [
-      "An all-in-all basic IT program with classes varying from programming to regular Unix usage. A very chill place where I got to know many of my closest friends today, however I must admit that the education itself wasn't very rewarding.",
+      "An all-in-all basic IT program with classes varying from programming to regular Unix usage. A very chill place where I got to know many of my closest friends today, however I must admit that the education itself wasn’t very rewarding.",
     ],
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'September 2016 - present',
+    date: 'November 2022 - present',
+    location: 'Viskan System AB',
+    title: 'Chief technology officer',
+    content: [
+      'As CTO, I lead Viskan’s technology strategy, overseeing the selection and management of our tech stack and hosting environments. My focus is on building modern, scalable, secure, and maintainable software solutions.',
+      'Beyond technology, I play a key role in team development—mentoring and inspiring developers while fostering a culture of innovation and continuous improvement. I also ensure that Viskan’s technological advancements align with business objectives and market trends, driving long-term growth and success.',
+    ],
+  },
+  {
+    date: 'September 2016 - October 2022',
     location: 'Viskan System AB',
     title: 'Partner & integration',
     content: [
@@ -183,12 +192,12 @@ export const experience: TimelineItem[] = [
     ],
   },
   {
-    date: 'June 2012 - present',
+    date: 'June 2012 - October 2022',
     location: 'Viskan System AB',
     title: 'System developer',
     content: [
-      "Originally hired as a backend developer (mainly Java and SQL), I've been doing a lot of coding and big refactorings of older applications. Smoothly transitioning more into the DevOps  area, working with setting up new tools such as Jenkins, Nexus, GitLab and Mattermost.",
-      "I've also been improving our build pipelines by configuring Maven builds, Jenkins pipelines and deployment scripts. Lately, I've been working a lot with containerisation, trying out both Docker Swarm and Kubernetes. Transitioning our applications to a containerised environment has been a very rewarding and fun journey.",
+      "Originally hired as a backend developer (mainly Java and SQL), I’ve been doing a lot of coding and big refactorings of older applications. Smoothly transitioning more into the DevOps  area, working with setting up new tools such as Jenkins, Nexus, GitLab and Mattermost.",
+      "I've also been improving our build pipelines by configuring Maven builds, Jenkins pipelines and deployment scripts. Lately, I’ve been working a lot with containerisation, trying out both Docker Swarm and Kubernetes. Transitioning our applications to a containerised environment has been a very rewarding and fun journey.",
     ],
   },
 ];
