@@ -163,14 +163,6 @@ export const portfolioItems: PortfolioItem[] = [];
  */
 export const education: TimelineItem[] = [
   {
-    date: 'June 2009',
-    location: 'John Bauer gymnasium',
-    title: 'Information technology',
-    content: [
-      "An all-in-all basic IT program with classes varying from programming to regular Unix usage. A very chill place where I got to know many of my closest friends today, however I must admit that the education itself wasn't very rewarding.",
-    ],
-  },
-  {
     date: 'May 2012',
     location: 'University of Borås',
     title: 'System architect',
@@ -178,9 +170,25 @@ export const education: TimelineItem[] = [
       'A three-year lasting bachelor degree that was very well balanced around theory and practical excersices, learning different kinds of programming languages, technices and also different project management styles. I knew most of the practical things at this time, but it was educational to just practice it with other people and discuss with like-minded people.',
     ],
   },
+  {
+    date: 'June 2009',
+    location: 'John Bauer gymnasium',
+    title: 'Information technology',
+    content: [
+      "An all-in-all basic IT program with classes varying from programming to regular Unix usage. A very chill place where I got to know many of my closest friends today, however I must admit that the education itself wasn't very rewarding.",
+    ],
+  },
 ];
 
 export const experience: TimelineItem[] = [
+  {
+    date: 'September 2016 - present',
+    location: 'Viskan System AB',
+    title: 'Partner & integration',
+    content: [
+      'With this role, I got responsibility over our integrations with third parties and the technical communication with them. This was mainly focused on our third party payment service providers, building a solid framework for processing payments through our E-commerce platform and further down the flows in the back-office system, handling order cancellations, invoice activations and returns.',
+    ],
+  },
   {
     date: 'June 2012 - present',
     location: 'Viskan System AB',
@@ -188,14 +196,6 @@ export const experience: TimelineItem[] = [
     content: [
       "Originally hired as a backend developer (mainly Java and SQL), I've been doing a lot of coding and big refactorings of older applications. Smoothly transitioning more into the DevOps  area, working with setting up new tools such as Jenkins, Nexus, GitLab and Mattermost.",
       "I've also been improving our build pipelines by configuring Maven builds, Jenkins pipelines and deployment scripts. Lately, I've been working a lot with containerisation, trying out both Docker Swarm and Kubernetes. Transitioning our applications to a containerised environment has been a very rewarding and fun journey.",
-    ],
-  },
-  {
-    date: 'September 2016 - present',
-    location: 'Viskan System AB',
-    title: 'Partner & integration',
-    content: [
-      'With this role, I got responsibility over our integrations with third parties and the technical communication with them. This was mainly focused on our third party payment service providers, building a solid framework for processing payments through our E-commerce platform and further down the flows in the back-office system, handling order cancellations, invoice activations and returns.',
     ],
   },
 ];
@@ -259,8 +259,8 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'GitHub', Icon: GitHubIcon, href: 'https://github.com/anton-johansson'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/anton-johansson/'},
+  {label: 'GitHub', Icon: GitHubIcon, href: 'https://github.com/anton-johansson'},
   {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/anton.johansson/'},
   {label: 'Steam', Icon: SteamIcon, href: 'https://steamcommunity.com/id/antonjohansson_'},
   {label: 'Spotify', Icon: SpotifyIcon, href: 'https://open.spotify.com/user/antoon'},
