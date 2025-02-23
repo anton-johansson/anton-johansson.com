@@ -1,5 +1,5 @@
 import {Dialog, Transition, TransitionChild} from '@headlessui/react';
-import {ArchiveBoxIcon} from '@heroicons/react/24/outline';
+import {Bars3Icon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
@@ -71,7 +71,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
           aria-label="Menu Button"
           className="fixed top-2 right-2 z-40 rounded-md bg-orange-500 p-2 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
           onClick={toggleOpen}>
-          <ArchiveBoxIcon className="h-8 w-8 text-white" />
+          <Bars3Icon className="h-8 w-8 text-white" />
           <span className="sr-only">Open sidebar</span>
         </button>
         <Transition as={Fragment} show={isOpen}>
