@@ -1,7 +1,7 @@
 import {Dialog} from '@headlessui/react';
 import {Bars3Icon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import {FC, memo, useCallback, useMemo, useState} from 'react';
+import {FC, memo, useCallback, useState} from 'react';
 
 import {SectionId} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
