@@ -1,13 +1,12 @@
 # anton-johansson.com
 
-My personal webpage, hosted here:
-* https://anton-johansson.com
-* https://anton-johansson.se
+My personal webpage, hosted here:  
+https://anton-johansson.com
 
 
 ## Building and running for development
 
-Make sure you have Node.js 16.x installed. Then run:
+Make sure you have Node.js 22.x installed. Then run:
 
 ```shell
 $ npm install
