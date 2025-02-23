@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 import {isApple, isMobile} from '../../config';
-import {recommendation,SectionId} from '../../data/data';
+import {recommendation, SectionId} from '../../data/data';
 import {Recommendation} from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
@@ -87,7 +87,7 @@ const Recommendations: FC = memo(() => {
               {recommendations.map((recommendation, index) => {
                 const isActive = index === activeIndex;
                 return (
-                  <Recommendation
+                  <RecommendationComponent
                     isActive={isActive}
                     key={`${recommendation.name}-${index}`}
                     recommendation={recommendation}
@@ -119,7 +119,7 @@ const Recommendations: FC = memo(() => {
   );
 });
 
-const Recommendation: FC<{recommendation: Recommendation; isActive: boolean}> = memo(
+const RecommendationComponent: FC<{recommendation: Recommendation; isActive: boolean}> = memo(
   ({recommendation: {texts, name}, isActive}) => (
     <div
       className={classNames(

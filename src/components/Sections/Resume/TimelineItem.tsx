@@ -2,7 +2,7 @@ import {FC, memo} from 'react';
 
 import {TimelineItem} from '../../../data/dataDef';
 
-const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
+const TimelineItemComponent: FC<{item: TimelineItem}> = memo(({item}) => {
   const {title, date, location, content} = item;
   return (
     <div className="pb-8 text-left last:pb-0">
@@ -23,5 +23,5 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
   );
 });
 
-TimelineItem.displayName = 'TimelineItem';
-export default TimelineItem;
+TimelineItemComponent.displayName = 'TimelineItem';
+export default TimelineItemComponent;

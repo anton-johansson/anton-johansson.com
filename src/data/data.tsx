@@ -1,11 +1,11 @@
 import {
   AcademicCapIcon,
+  BuildingOfficeIcon,
   CalendarIcon,
   FlagIcon,
   MapIcon,
-  OfficeBuildingIcon,
   SparklesIcon,
-} from '@heroicons/react/outline';
+} from '@heroicons/react/24/outline';
 
 import GitHubIcon from '../components/Icon/GitHubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
@@ -93,7 +93,7 @@ export const aboutData: About = {
     {label: 'Nationality', text: 'Swedish', Icon: FlagIcon},
     {label: 'Interests', text: 'Gaming, coding and socializing', Icon: SparklesIcon},
     {label: 'Study', text: 'University of Borås', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Viskan System AB', Icon: OfficeBuildingIcon},
+    {label: 'Employment', text: 'Viskan System AB', Icon: BuildingOfficeIcon},
   ],
 };
 

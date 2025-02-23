@@ -1,20 +1,12 @@
 import {StaticImageData} from 'next/image';
-import {FC, SVGProps} from 'react';
+import {FC, JSX, ReactNode, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
 
 export interface HomepageMeta {
   title: string;
   description: string;
-  ogImageUrl?: string;
-  twitterCardType?: 'summary' | 'summary_large';
-  twitterTitle?: string;
-  twitterSite?: string;
-  twitterCreator?: string;
-  twitterDomain?: string;
-  twitterUrl?: string;
-  twitterDescription?: string;
-  twitterImageUrl?: string;
+  children?: ReactNode;
 }
 
 /**
@@ -38,7 +30,7 @@ export interface About {
 export interface AboutItem {
   label: string;
   text: string | (() => string);
-  Icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  Icon?: (props: SVGProps<SVGSVGElement>) => React.ReactNode;
 }
 
 /**
