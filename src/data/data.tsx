@@ -21,7 +21,6 @@ import {
   ContactType,
   Home,
   HomepageMeta,
-  PortfolioItem,
   RecommendationSection,
   Skill,
   Social,
@@ -43,7 +42,6 @@ export const SectionId = {
   Home: 'home',
   About: 'about',
   Resume: 'resume',
-  Portfolio: 'portfolio', // Currently not used
   Recommendations: 'recommendations',
   Contact: 'contact',
 } as const;
@@ -152,11 +150,6 @@ export const skills: Skill[] = [
     ],
   },
 ];
-
-/**
- * Portfolio section (currently not used)
- */
-export const portfolioItems: PortfolioItem[] = [];
 
 /**
  * Resume section
