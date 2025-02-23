@@ -1,7 +1,7 @@
 import {Dialog, Transition, TransitionChild} from '@headlessui/react';
 import {Bars3Icon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
+import {FC, memo, useCallback, useMemo, useState} from 'react';
 
 import {SectionId} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
@@ -74,43 +74,23 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
           <Bars3Icon className="h-8 w-8 text-white" />
           <span className="sr-only">Open sidebar</span>
         </button>
-        <Transition as={Fragment} show={isOpen}>
-          <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
-            <TransitionChild
-              as={Fragment}
-              enter="transition-opacity ease-linear duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition-opacity ease-linear duration-300"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0">
-              {/* <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" /> */}
-            </TransitionChild>
-            <TransitionChild
-              as={Fragment}
-              enter="transition ease-in-out duration-300 transform"
-              enterFrom="-translate-x-full"
-              enterTo="translate-x-0"
-              leave="transition ease-in-out duration-300 transform"
-              leaveFrom="translate-x-0"
-              leaveTo="-translate-x-full">
-              <div className="relative w-4/5 bg-stone-800">
-                <nav className="mt-5 flex flex-col gap-y-2 px-2">
-                  {navSections.map(section => (
-                    <NavItem
-                      activeClass={activeClass}
-                      current={section === currentSection}
-                      inactiveClass={inactiveClass}
-                      key={section}
-                      onClick={toggleOpen}
-                      section={section}
-                    />
-                  ))}
-                </nav>
-              </div>
-            </TransitionChild>
-          </Dialog>
-        </Transition>
+        <Dialog as="div" open={isOpen} className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
+          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+          <div className="relative w-4/5 bg-stone-800">
+            <nav className="mt-5 flex flex-col gap-y-2 px-2">
+              {navSections.map(section => (
+                <NavItem
+                  activeClass={activeClass}
+                  current={section === currentSection}
+                  inactiveClass={inactiveClass}
+                  key={section}
+                  onClick={toggleOpen}
+                  section={section}
+                />
+              ))}
+            </nav>
+          </div>
+        </Dialog>
       </>
     );
   },
