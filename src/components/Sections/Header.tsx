@@ -1,4 +1,4 @@
-import {Dialog, Transition, TransitionChild} from '@headlessui/react';
+import {Dialog} from '@headlessui/react';
 import {Bars3Icon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {FC, memo, useCallback, useMemo, useState} from 'react';
@@ -7,14 +7,10 @@ import {SectionId} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';
+const navSections = [SectionId.Home, SectionId.About, SectionId.Resume, SectionId.Recommendations, SectionId.Contact];
 
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
-  const navSections = useMemo(
-    () => [SectionId.Home, SectionId.About, SectionId.Resume, SectionId.Recommendations, SectionId.Contact],
-    [],
-  );
-
   const intersectionHandler = useCallback((section: SectionId | null) => {
     section && setCurrentSection(section);
   }, []);
